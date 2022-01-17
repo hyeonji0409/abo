@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -46,9 +47,17 @@
 			</div>
 			<div class="topMenu" id="top_menu">
 				<ul id="topMenuJoin">
-					<li><a href="javascript:void(0);" id="join"
-						onclick="showPopUp()">회원가입</a></li>
-					<li><a href="#" id="index_login">로그인</a></li>
+					<!-- 로그인 하기 전에 보여줄 메뉴 항목 -->
+					<c:if test="${empty sessionScope.sid}">
+						<li><a href="<c:url value='/login'/> ">로그인</a></li>
+						<li><a href="<c:url value='/join'/> ">회원가입</a></li>
+					</c:if>
+					<!-- 로그인 성공 후에 보여줄 메뉴 항목 -->
+					<c:if test="${not empty sessionScope.sid}">
+						<li style="color: white">${sessionScope.sid} 님 환영합니다! &nbsp;</li>
+						<li><a href="<c:url value='/logout'/> ">로그아웃</a></li>
+						<li><a href="<c:url value='/join'/> ">회원가입</a></li>
+					</c:if>
 				</ul>
 			</div>
 		</div>
