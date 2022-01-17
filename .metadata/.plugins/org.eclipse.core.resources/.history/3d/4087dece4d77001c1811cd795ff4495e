@@ -1,0 +1,5 @@
+package com.abo.artineer.controller;
+
+public class HomeController {
+
+}

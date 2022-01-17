@@ -1,0 +1,10 @@
+INDEX VERSION 1.4+D:\Full_Stackc_Study\artineer_pj\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+573348617.index
+3572914891.index
+1624174963.index
+3367341360.index
+777765471.index
+3427803515.index
+157274337.index
+2171694398.index
+3427803515.index

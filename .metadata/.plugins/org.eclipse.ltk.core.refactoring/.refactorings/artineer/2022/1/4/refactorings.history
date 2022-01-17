@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;top.jsp&apos; to &apos;top.jsp&apos;&#x0D;&#x0A;- Original project: &apos;artineer&apos;&#x0D;&#x0A;- Destination element: &apos;top.jsp&apos;&#x0D;&#x0A;- Original element: &apos;top.jsp&apos;" description="Copy file" element1="src/main/webapp/WEB-INF/views/layout/top.jsp" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1642393833914" target="/artineer/src/main/webapp/WEB-INF/views/layout/top.jsp" units="0" version="1.0"/>
+</session>
