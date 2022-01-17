@@ -7,17 +7,20 @@ public class MemberVO {
     private String memPw;
     private String memName;
     private String memGender;
-    private Date memBirth;
-    private String memHP1;
+    private String memBirthYear;
+    private String memBirthMonth;
+    private String memBirthDay;
+    private String memHP;
     private String memHP2;
     private String memHP3;
     private String memEmail;
+    private String memEmail2;
     private String emailRcv;
     private String memZipcode;
     private String memAddress1;
     private String memAddress2;
     private String memLevel;
-    private String memYear;
+    private int memYear;
     private Date memJoinDate;
     private String memprofile;
 
@@ -47,17 +50,32 @@ public class MemberVO {
     public void setMemGender(String memGender) {
         this.memGender = memGender;
     }
-    public Date getMemBirth() {
-        return memBirth;
+    public String getMemBirthYear() {
+        return memBirthYear;
     }
-    public void setMemBirth(Date memBirth) {
-        this.memBirth = memBirth;
+    public void setMemBirthYear(String memBirthYear) {
+        this.memBirthYear = memBirthYear;
     }
-    public String getMemHP1() {
-        return memHP1;
+    public String getMemBirthMonth() {
+        return memBirthMonth;
     }
-    public void setMemHP1(String memHP1) {
-        this.memHP1 = memHP1;
+    public void setMemBirthMonth(String memBirthMonth) {
+        this.memBirthMonth = memBirthMonth;
+    }
+
+    public String getMemBirthDay() {
+        return memBirthDay;
+    }
+
+    public void setMemBirthDay(String memBirthDay) {
+        this.memBirthDay = memBirthDay;
+    }
+
+    public String getMemHP() {
+        return memHP;
+    }
+    public void setMemHP(String memHP) {
+        this.memHP = memHP;
     }
     public String getMemHP2() {
         return memHP2;
@@ -76,6 +94,12 @@ public class MemberVO {
     }
     public void setMemEmail(String memEmail) {
         this.memEmail = memEmail;
+    }
+    public String getMemEmail2() {
+        return memEmail2;
+    }
+    public void setMemEmail2(String memEmail2) {
+        this.memEmail2 = memEmail2;
     }
     public String getEmailRcv() {
         return emailRcv;
@@ -107,10 +131,10 @@ public class MemberVO {
     public void setMemLevel(String memLevel) {
         this.memLevel = memLevel;
     }
-    public String getMemYear() {
+    public int getMemYear() {
         return memYear;
     }
-    public void setMemYear(String memYear) {
+    public void setMemYear(int memYear) {
         this.memYear = memYear;
     }
     public Date getMemJoinDate() {

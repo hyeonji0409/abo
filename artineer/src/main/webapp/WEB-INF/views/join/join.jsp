@@ -102,11 +102,11 @@
         </tr>
         <tr>
           <td>휴대폰번호 </td>
-          <td><select name="memHP1" id="memHP1">
+          <td><select name="memHP" id="memHP">
             <option value="010" selected>010
           </select>
-            - <input type="text" name="memHP2" id="memHP2" size="4">
-            - <input type="text" name="memHP3" id="memHP3" size="4">
+            - <input type="text" name="memHP2" id="memHP2" size="4" maxlength="4">
+            - <input type="text" name="memHP3" id="memHP3" size="4" maxlength="4">
           </td>
         </tr>
         <tr>
@@ -121,8 +121,8 @@
         <tr>
           <td>성별</td>
           <td>
-            <input type="radio" name="sex" value="남" checked>남
-            <input type="radio" name="sex" value="여">여
+            <input type="radio" name="memGender" value="M" checked>남
+            <input type="radio" name="memGender" value="F">여
           </td>
         </tr>
         <tr>
@@ -140,11 +140,15 @@
           </td>
         </tr>
         <tr>
+          <td valign="top">기수</td>
+          <td><input type='text' name="memYear" id="memYear" size="40" placeholder="기수 (숫자만 입력, 2022년 가입자는 6기)"></td>
+        </tr>
+        <tr>
           <td valign="top">이메일</td>
           <td>
-            <input type='text' name="email" id="memEmail1" size="15">@
-            <input type='text' name="email_dns" id="memEmail2">
-            <select name="emailSelect" id="memEmail3">
+            <input type='text' name="memEmail" id="memEmail" size="16">@
+            <input type='text' name="memEmail2" id="memEmail2">
+            <select name="memEmail3" id="memEmail3">
               <option value="">직접입력</option>
               <option value="daum.net">daum.net</option>
               <option value="empal.com">empal.com</option>
@@ -159,8 +163,8 @@
         <tr>
           <td>이메일 수신 여부 &nbsp;</td>
           <td>
-            <input type="radio" name="emailRcv" value="yes">예
-            <input type="radio" name="emailRcv" value="no">아니오
+            <input type="radio" name="emailRcv" value="Y">예
+            <input type="radio" name="emailRcv" value="N">아니오
           </td>
         </tr>
         <tr>

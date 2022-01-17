@@ -100,7 +100,7 @@ window.onload = function() {
             return false;
         } // 관심분야 선택 검사 완료
 
-        var email1 = document.getElementById('memEmail1');
+        var email1 = document.getElementById('memEmail');
         var email2 = document.getElementById('memEmail2');
         if(email1.value == "" || email2.value == "") {
             alert("이메일 입력 양식이 정확하지 않습니다.");
@@ -153,13 +153,13 @@ window.addEventListener("keyup", () => {
 $(function(){	
     $(document).ready(function(){
 
-        $('select[name=emailSelect]').change(function() {
+        $('select[name=memEmail3]').change(function() {
 			if($(this).val()==""){
-				$('#email2').val("");
-                $("#email2").attr("readonly", false);
+				$('#memEmail2').val("");
+                $("#memEmail2").attr("readonly", false);
 			} else {
-				$('#email2').val($(this).val());
-				$("#email2").attr("readonly", true);
+				$('#memEmail2').val($(this).val());
+				$("#memEmail2").attr("readonly", true);
 			}
 		});
         // $('#Submit').on('click', function() {
