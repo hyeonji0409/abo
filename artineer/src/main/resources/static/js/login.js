@@ -49,7 +49,7 @@ $(document).ready(function(){
             type:"post",
             url:"logintask",
             data:{"id_input":$('#id_input').val(),
-                "pwd_input":$('#pwd_input').val()},  /* 컨트롤러에서 받을 때 : id, pw로 받음*/
+                "pwd_input":$('#pwd_input').val()},
             dataType:'text',
             success:function(result){
                 if(result == "success"){

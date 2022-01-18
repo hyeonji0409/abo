@@ -25,17 +25,17 @@
         </div>
         <form class="sign_in_container" id="sign_in_container">
             <div class="id_input">
-                <input placeholder="e-mail 또는 아이디 입력" id="id_input">
+                <input placeholder="e-mail 또는 아이디 입력" name="id_input" id="id_input">
             </div>
             <div class="pwd_input">
-                <input placeholder="비밀번호" type="password" id="pwd_input" onkeyup=onKeyupPasswd(event)>
+                <input placeholder="비밀번호" type="password" name="pwd_input" id="pwd_input" onkeyup=onKeyupPasswd(event)>
             </div>
 <%--            <button class="sign_in_button">로그인</button>--%>
             <input type="submit" class="sign_in_button" value="로그인">
         </form>
         <!-- id / pw 찾기 -->
         <div class=" id_pw_search">
-            <a href="#">아이디 / 비밀번호 찾기</a> &nbsp;
+            <a href="<c:url value='/findIdPw' />">아이디 / 비밀번호 찾기</a> &nbsp;
             <a href="<c:url value='/join' /> " id="join">회원가입</a>
         </div>
     </div>

@@ -48,7 +48,7 @@
         <tr>
           <td>생년월일 </td>
           <td>
-            <input type="text" name="memBirthYear" id="memBirthYear" size="4">년
+            <input type="text" name="memBirth" id="memBirth" size="4">년
             <select name="memBirthMonth" id="memBirthMonth">
               <option value="1">1
               <option value="2">2
@@ -142,6 +142,9 @@
         <tr>
           <td valign="top">기수</td>
           <td><input type='text' name="memYear" id="memYear" size="40" placeholder="기수 (숫자만 입력, 2022년 가입자는 6기)"></td>
+        </tr>
+        <tr>
+          <td><input type='hidden' name="memLevel" id="memLevel" size="5" value="4"></td>
         </tr>
         <tr>
           <td valign="top">이메일</td>

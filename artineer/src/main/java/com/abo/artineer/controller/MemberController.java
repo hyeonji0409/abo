@@ -2,7 +2,9 @@ package com.abo.artineer.controller;
 
 import com.abo.artineer.model.MemberVO;
 import com.abo.artineer.service.MemberService;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,6 +17,8 @@ import java.util.HashMap;
 public class MemberController {
     @Autowired
     MemberService service;
+    @Setter(onMethod_ = {@Autowired})
+    private PasswordEncoder passwordEncoder;
     // 회원가입 폼 이동
     @RequestMapping("/join")
     public String viewJoin() {
@@ -56,11 +60,19 @@ public class MemberController {
     @ResponseBody
     @RequestMapping("/logintask")
     public String loginCheck(@RequestParam HashMap<String, Object> param,
-                             HttpSession session) {
+                             @RequestParam("id_input") String memId,
+                             @RequestParam("pwd_input") String memPw,
+                             HttpSession session
+                             ) {
         // 로그인 체크 결과
         MemberVO vo = service.loginCheck(param);
+        String EncodedPw = service.requestPw(memId);
         String result = "fail";
-        if(vo != null) {
+        System.out.println("memPw : " + memPw);
+        System.out.println("EncodedPw : " + EncodedPw);
+        System.out.println("vo : " + vo);
+        System.out.println("passwordEncoder.matches(memPw, EncodedPw)) : " + passwordEncoder.matches(memPw, EncodedPw));
+        if(vo != null && passwordEncoder.matches(memPw, EncodedPw)) {
             session.setAttribute("sid", vo.getMemName());
             result = "success";
         }
@@ -71,5 +83,10 @@ public class MemberController {
     public String logout(HttpSession session) {
         session.invalidate();
         return "redirect:/";
+    }
+    // 아이디 비밀번호 찾기 폼 이동
+    @RequestMapping("/findIdPw")
+    public String findIdPw() {
+        return "/login/findForm";
     }
 }

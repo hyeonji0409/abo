@@ -7,7 +7,7 @@ public class MemberVO {
     private String memPw;
     private String memName;
     private String memGender;
-    private String memBirthYear;
+    private String memBirth;
     private String memBirthMonth;
     private String memBirthDay;
     private String memHP;
@@ -19,7 +19,7 @@ public class MemberVO {
     private String memZipcode;
     private String memAddress1;
     private String memAddress2;
-    private String memLevel;
+    private int memLevel;
     private int memYear;
     private Date memJoinDate;
     private String memprofile;
@@ -50,11 +50,11 @@ public class MemberVO {
     public void setMemGender(String memGender) {
         this.memGender = memGender;
     }
-    public String getMemBirthYear() {
-        return memBirthYear;
+    public String getMemBirth() {
+        return memBirth;
     }
-    public void setMemBirthYear(String memBirthYear) {
-        this.memBirthYear = memBirthYear;
+    public void setMemBirth(String memBirth) {
+        this.memBirth = memBirth;
     }
     public String getMemBirthMonth() {
         return memBirthMonth;
@@ -62,15 +62,12 @@ public class MemberVO {
     public void setMemBirthMonth(String memBirthMonth) {
         this.memBirthMonth = memBirthMonth;
     }
-
     public String getMemBirthDay() {
         return memBirthDay;
     }
-
     public void setMemBirthDay(String memBirthDay) {
         this.memBirthDay = memBirthDay;
     }
-
     public String getMemHP() {
         return memHP;
     }
@@ -125,10 +122,10 @@ public class MemberVO {
     public void setMemAddress2(String memAddress2) {
         this.memAddress2 = memAddress2;
     }
-    public String getMemLevel() {
+    public int getMemLevel() {
         return memLevel;
     }
-    public void setMemLevel(String memLevel) {
+    public void setMemLevel(int memLevel) {
         this.memLevel = memLevel;
     }
     public int getMemYear() {

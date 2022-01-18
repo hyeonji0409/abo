@@ -5,6 +5,7 @@ import com.abo.artineer.model.MemberVO;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -14,6 +15,9 @@ public class MemberService implements IMemberService {
     @Setter(onMethod_ = {@Autowired})
     @Qualifier("IMemberDAO")
     IMemberDAO dao;
+
+    @Setter(onMethod_ = {@Autowired})
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public MemberVO loginCheck(HashMap<String, Object> map) {
@@ -26,6 +30,12 @@ public class MemberService implements IMemberService {
     }
     @Override
     public void join(MemberVO memberVO) {
+        String encodedPassword = passwordEncoder.encode(memberVO.getMemPw());
+        memberVO.setMemPw(encodedPassword);
         dao.join(memberVO);
+    }
+    @Override
+    public String requestPw(String memId) {
+        return dao.requestPw(memId);
     }
 }

@@ -52,7 +52,7 @@ window.onload = function() {
             return false;
         } // 비밀번호 길이 검증
 
-        var birthYear = document.getElementById('memBirthYear');
+        var birthYear = document.getElementById('memBirth');
         if(birthYear.value == "") {
             alert("생년월일을 입력해 주세요.");
             birthYear.focus();

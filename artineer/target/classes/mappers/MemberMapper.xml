@@ -21,7 +21,7 @@
     </resultMap>
     <!--  로그인 확인  -->
     <select id="loginCheck" resultMap="memResult" parameterType="hashmap">
-        SELECT * FROM member WHERE memId=#{id_input} AND memPw=#{pwd_input}
+        SELECT * FROM member WHERE memId=#{id_input}
     </select>
     <!--  아이디 중복 체크  -->
     <select id="idCheck" parameterType="string" resultType="string" >
@@ -29,9 +29,12 @@
     </select>
     <!--  회원가입  -->
         <insert id="join" parameterType="com.abo.artineer.model.MemberVO" >
-            INSERT INTO member (memId, memPw, memName, memHP, memZipcode, memAddress1, memAddress2, memEmail, memBirth, memGender, emailRcv, memYear)
+            INSERT INTO member (memId, memPw, memName, memHP, memZipcode, memAddress1, memAddress2, memEmail, memBirth, memGender, emailRcv, memYear, memLevel)
             VALUES (#{memId}, #{memPw}, #{memName}, CONCAT(#{memHP},'-',#{memHP2},'-',#{memHP3}), #{memZipcode}, #{memAddress1}, #{memAddress2}, CONCAT(#{memEmail},'@',#{memEmail2}),
-                    CONCAT(#{memBirthYear},'-',#{memBirthMonth},'-',#{memBirthDay}), #{memGender}, #{emailRcv}, #{memYear})
+                    CONCAT(#{memBirth},'-',#{memBirthMonth},'-',#{memBirthDay}), #{memGender}, #{emailRcv}, #{memYear}, #{memLevel})
         </insert>
-
+<!--  비밀번호 조회  -->
+    <select id="requestPw" parameterType="string" resultType="string">
+        SELECT memPw FROM member WHERE memId=#{id_input}
+    </select>
 </mapper>
