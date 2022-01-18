@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <meta charset="TF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artineer</title>
@@ -50,7 +50,7 @@
             <div class="pwd_input">
                 <input placeholder="아이디 입력" type="text" id="pw_id_input" name="pw_id_input" onkeyup=onKeyupPasswd(event)><br>
                 <input placeholder="이름 입력" type="text" id="pw_name_input" name="pw_name_input" onkeyup=onKeyupPasswd(event)><br>
-                <input placeholder="비밀변호 변경 메일 받을 이메일 입력" type="text" id="pw_email_input" name="pw_email_input" onkeyup=onKeyupPasswd(event)>
+                <input placeholder="가입 시 입력했던 이메일" type="text" id="pw_email_input" name="pw_email_input" onkeyup=onKeyupPasswd(event)>
             </div>
             <%--            <button class="sign_in_button">로그인</button>--%>
             <button class="sign_in_button" id="findPwBtn">비밀번호 찾기</button>

@@ -89,6 +89,7 @@ public class MemberController {
     public String findId() {
         return "/login/findForm";
     }
+
     // 아이디 찾기
     @ResponseBody
     @RequestMapping("/findIdtask")
@@ -97,5 +98,21 @@ public class MemberController {
         String ID = service.findId(email_input, name_input);
         System.out.println("ID : " + ID);
         return ID;
+    }
+
+    // 비밀번호 찾기
+    @ResponseBody
+    @RequestMapping("/findPwtask")
+    public String findPwtask(@RequestParam("pw_id_input") String pw_id_input,
+                             @RequestParam("pw_name_input") String pw_name_input,
+                             @RequestParam("pw_email_input") String pw_email_input) {
+        String PwCheck = service.findPw(pw_id_input, pw_name_input, pw_email_input);
+        System.out.println("PW : " + PwCheck);
+        return PwCheck;
+    }
+
+    @RequestMapping("/changePw")
+    public String findPwtaskComplete() {
+        return "/login/changePw";
     }
 }

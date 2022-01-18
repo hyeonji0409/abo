@@ -41,4 +41,8 @@
     <select id="findId" resultType="string" parameterType="string">
         SELECT ifnull(memId, 0) FROM member WHERE memEmail=#{memEmail} AND memName=#{memName}
     </select>
+    <!--  비밀번호 변경  -->
+    <select id="findPw" resultType="string" parameterType="string">
+        SELECT ifnull(memPw, 0) FROM member WHERE memEmail=#{memEmail} AND memName=#{memName} AND memId=#{memId}
+    </select>
 </mapper>

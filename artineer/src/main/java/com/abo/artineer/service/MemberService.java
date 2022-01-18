@@ -42,4 +42,9 @@ public class MemberService implements IMemberService {
     public String findId(String memEmail, String memName) {
         return dao.findId(memEmail, memName);
     }
+
+    @Override
+    public String findPw(String memId, String memName, String memEmail) {
+        return dao.findPw(memId, memName, memEmail);
+    }
 }
