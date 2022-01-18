@@ -86,7 +86,16 @@ public class MemberController {
     }
     // 아이디 비밀번호 찾기 폼 이동
     @RequestMapping("/findIdPw")
-    public String findIdPw() {
+    public String findId() {
         return "/login/findForm";
+    }
+    // 아이디 찾기
+    @ResponseBody
+    @RequestMapping("/findIdtask")
+    public String findIdtask(@RequestParam("email_input") String email_input,
+                             @RequestParam("name_input") String name_input) {
+        String ID = service.findId(email_input, name_input);
+        System.out.println("ID : " + ID);
+        return ID;
     }
 }

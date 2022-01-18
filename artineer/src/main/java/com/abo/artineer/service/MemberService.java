@@ -38,4 +38,8 @@ public class MemberService implements IMemberService {
     public String requestPw(String memId) {
         return dao.requestPw(memId);
     }
+    @Override
+    public String findId(String memEmail, String memName) {
+        return dao.findId(memEmail, memName);
+    }
 }
