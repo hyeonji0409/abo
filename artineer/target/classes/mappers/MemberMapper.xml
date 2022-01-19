@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.abo.artineer.dao.IMemberDAO">
+    <resultMap id="memResult" type="com.abo.artineer.model.MemberVO" >
+        <result property="memId" column="memId" />
+        <result property="memPw" column="memPw" />
+        <result property="memName" column="memName" />
+        <result property="memGender" column="memGender" />
+        <result property="memBirth" column="memBirth" />
+        <result property="memHP" column="memHP" />
+        <result property="memEmail" column="memEmail" />
+        <result property="emailRcv" column="emailRcv" />
+        <result property="memZipcode" column="memZipcode" />
+        <result property="memAddress1" column="memAddress1" />
+        <result property="memAddress2" column="memAddress2" />
+        <result property="memLevel" column="memLevel" />
+        <result property="memYear" column="memYear" />
+        <result property="memJoinDate" column="memJoinDate" />
+        <result property="memprofile" column="memprofile" />
+    </resultMap>
+    <!--  로그인 확인  -->
+    <select id="loginCheck" resultMap="memResult" parameterType="hashmap">
+        SELECT * FROM member WHERE memId=#{id_input}
+    </select>
+    <!--  아이디 중복 체크  -->
+    <select id="idCheck" parameterType="string" resultType="string" >
+        SELECT memId FROM member WHERE memId=#{memId}
+    </select>
+    <!--  회원가입  -->
+        <insert id="join" parameterType="com.abo.artineer.model.MemberVO" >
+            INSERT INTO member (memId, memPw, memName, memHP, memZipcode, memAddress1, memAddress2, memEmail, memBirth, memGender, emailRcv, memYear, memLevel)
+            VALUES (#{memId}, #{memPw}, #{memName}, CONCAT(#{memHP},'-',#{memHP2},'-',#{memHP3}), #{memZipcode}, #{memAddress1}, #{memAddress2}, CONCAT(#{memEmail},'@',#{memEmail2}),
+                    CONCAT(#{memBirth},'-',#{memBirthMonth},'-',#{memBirthDay}), #{memGender}, #{emailRcv}, #{memYear}, #{memLevel})
+        </insert>
+<!--  암호화 비밀번호 조회  -->
+    <select id="requestPw" parameterType="string" resultType="string">
+        SELECT memPw FROM member WHERE memId=#{id_input}
+    </select>
+    <!--  아이디 찾기  -->
+    <select id="findId" resultType="string" parameterType="string">
+        SELECT ifnull(memId, 0) FROM member WHERE memEmail=#{memEmail} AND memName=#{memName}
+    </select>
+    <!--  비밀번호 변경  -->
+    <select id="findPw" resultType="string" parameterType="string">
+        SELECT ifnull(memPw, 0) FROM member WHERE memEmail=#{memEmail} AND memName=#{memName} AND memId=#{memId}
+    </select>
+</mapper>
