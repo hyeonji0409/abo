@@ -3,7 +3,7 @@ window.onload = function() {
     document.getElementById('joinForm').onsubmit = function() {
         // 성명을 입력하지 않은 경우 경고창 띄우기
         // 성명 입력 칸의 id를 찾아오기
-        var name = document.getElementById('name')
+        var name = document.getElementById('memName')
         // 값이 비었는지 확인 후 비었으면 경고 출력, 입력란에 포커스, 서버로 전송되지 않게(다음 페이지로 이동 못하게)
         if(name.value == "") {
             alert("성명을 입력하세요.");
@@ -11,7 +11,7 @@ window.onload = function() {
             return false; // 서버로 전송되지 않게 함.
         } // 이름 검증 끝
 
-        var id = document.getElementById('id');
+        var id = document.getElementById('memId');
         if(id.value == "") {
             alert("아이디를 입력하세요.");
             id.focus();
@@ -24,14 +24,14 @@ window.onload = function() {
             return false;
         } // 아이디 검증 끝
 
-        var password = document.getElementById('password');
+        var password = document.getElementById('memPw');
         if(password.value == "") {
             alert("비밀번호를 입력하세요.");
             password.focus();
             return false;
         } // 비밀번호 입력 됐는지 검사
 
-        var passwordCheck = document.getElementById('passwordCheck');
+        var passwordCheck = document.getElementById('memPwdCheck');
         if(passwordCheck.value == "") {
             alert("비밀번호 확인을 입력하세요.");
             passwordCheck.focus();
@@ -52,7 +52,7 @@ window.onload = function() {
             return false;
         } // 비밀번호 길이 검증
 
-        var birthYear = document.getElementById('birthYear');
+        var birthYear = document.getElementById('memBirth');
         if(birthYear.value == "") {
             alert("생년월일을 입력해 주세요.");
             birthYear.focus();
@@ -66,8 +66,8 @@ window.onload = function() {
             return false;
         }
 
-        var hp2 = document.getElementById('hp2');
-        var hp3 = document.getElementById('hp3');
+        var hp2 = document.getElementById('memHP2');
+        var hp3 = document.getElementById('memHP3');
         if(hp2.value == "" || hp3.value == "") {
             alert("휴대폰번호 입력 양식이 정확하지 않습니다.");
             hp2.focus();
@@ -79,14 +79,14 @@ window.onload = function() {
             return false;
         }
 
-        var zipcode = document.getElementById('zipcode');
+        var zipcode = document.getElementById('memZipcode');
         if(zipcode.value == "") {
             alert("주소를 검색해 주세요.");
             zipcode.focus();
             return false;
         }
 
-        var address2 = document.getElementById('address2');
+        var address2 = document.getElementById('memAddress2');
         if(address2.value == "") {
             alert("상세 주소를 입력해 주세요.");
             address2.focus();
@@ -100,8 +100,8 @@ window.onload = function() {
             return false;
         } // 관심분야 선택 검사 완료
 
-        var email1 = document.getElementById('email1');
-        var email2 = document.getElementById('email2');
+        var email1 = document.getElementById('memEmail');
+        var email2 = document.getElementById('memEmail2');
         if(email1.value == "" || email2.value == "") {
             alert("이메일 입력 양식이 정확하지 않습니다.");
             email1.focus();
@@ -131,17 +131,17 @@ window.onload = function() {
         //카카오 지도 발생
             new daum.Postcode({
                 oncomplete: function(data) { //선택시 입력값 세팅
-                    document.getElementById("zipcode").value = data.zonecode; // 주소 넣기 data.address
-                    document.getElementById("address1").value = data.address;
-                    document.getElementById("address2").focus(); //상세입력 포커싱
+                    document.getElementById("memZipcode").value = data.zonecode; // 주소 넣기 data.address
+                    document.getElementById("memAddress1").value = data.address;
+                    document.getElementById("memAddress2").focus(); //상세입력 포커싱
                     }
                 }).open();
             });
 }; // window.onload 끝
 
 window.addEventListener("keyup", () => {
-    var hp2 = document.getElementById('hp2');
-    var hp3 = document.getElementById('hp3');
+    var hp2 = document.getElementById('memHP2');
+    var hp3 = document.getElementById('memHP3');
 
     if(hp2.value.length == 4 && hp3.value.length == 0) {
 
@@ -153,41 +153,44 @@ window.addEventListener("keyup", () => {
 $(function(){	
     $(document).ready(function(){
 
-        $('select[name=emailSelect]').change(function() {
+        $('select[name=memEmail3]').change(function() {
 			if($(this).val()==""){
-				$('#email2').val("");
-                $("#email2").attr("readonly", false);
+				$('#memEmail2').val("");
+                $("#memEmail2").attr("readonly", false);
 			} else {
-				$('#email2').val($(this).val());
-				$("#email2").attr("readonly", true);
+				$('#memEmail2').val($(this).val());
+				$("#memEmail2").attr("readonly", true);
 			}
 		});
-        $('#Submit').on('click', function() {
-            if($('#name').value == "" || 
-            $('#id').value == "" ||  
-            $('#id').value.length < 6 || 
-            $('#id').value.length > 12 || 
-            $('#password').value == "" || 
-            $('#passwordCheck').value == "" || 
-            $('#password').value != $('#passwordCheck').value ||
-            $('#password').value.length < 8 || $('#password').value.length > 20 || 
-            $('#birthYear').value == "" ||
-            $('#hp2').value == "" || $('#hp3').value == "" ||
-            $('#hp2').value.length > 4 || $('#hp3').value.length > 4 ||
-            $('#zipcode').value == "" || 
-            $('#address2').value == "" ||
-            $('#job').value == "" || 
-            $('#email1').value == "" || $('#email2').value == "" ||
-            $(':radio[name="emailRcv"]:checked').length < 1) {
-                alert("정보가 올바르지 않습니다. <br> 다시 확인해 주세요.")
-                event.preventDefault();
-            }
-            else {
-            window.open("login.html", "로그인", "width=400, height=450");
-            }
-        });
+        // $('#Submit').on('click', function() {
+        //     if($('#name').value == "" ||
+        //     $('#id').value == "" ||
+        //     $('#id').value.length < 6 ||
+        //     $('#id').value.length > 12 ||
+        //     $('#password').value == "" ||
+        //     $('#passwordCheck').value == "" ||
+        //     $('#password').value != $('#passwordCheck').value ||
+        //     $('#password').value.length < 8 || $('#password').value.length > 20 ||
+        //     $('#birthYear').value == "" ||
+        //     $('#hp2').value == "" || $('#hp3').value == "" ||
+        //     $('#hp2').value.length > 4 || $('#hp3').value.length > 4 ||
+        //     $('#zipcode').value == "" ||
+        //     $('#address2').value == "" ||
+        //     $('#job').value == "" ||
+        //     $('#email1').value == "" || $('#email2').value == "" ||
+        //     $(':radio[name="emailRcv"]:checked').length < 1) {
+        //         alert("정보가 올바르지 않습니다. <br> 다시 확인해 주세요.")
+        //         event.preventDefault();
+        //     }
+        //     else {
+        //     window.open("login.html", "로그인", "width=400, height=450");
+        //     }
+        // });
         $('#Cancel').on('click', function() {
-            window.close();
+            var CancelCheck = confirm("정말 회원가입을 취소하시겠습니까?");
+            if(CancelCheck == true) {
+                location.href="/";
+            }
         });
     });
 });
