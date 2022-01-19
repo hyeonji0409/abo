@@ -152,6 +152,42 @@ window.addEventListener("keyup", () => {
 
 $(function(){	
     $(document).ready(function(){
+        let validate = false;
+        let IdCheck = false;
+        $('#Submit').on('click', function () {
+            if(IdCheck == false) {
+                event.stopImmediatePropagation();
+                alert("이미 중복되는 아이디가 있습니다.");
+            }
+            if(validate == false) {
+                event.stopImmediatePropagation();
+                return false;
+            }
+        });
+        // 아이디 중복 검사
+        $('#idCheck').on('click', function () {
+            event.preventDefault();
+
+            $.ajax({
+                type:"post",
+                url:"memIdCheck",
+                data:{"memId" : $('#memId').val() },
+                dataType:'text',
+                success:function(result){
+                    if(result == "no_use"){
+                        alert("사용할 수 있는 ID 입니다.");
+                        validate = true;
+                        IdCheck = true;
+                    }else{
+                        alert("사용 불가능한 ID 입니다.");
+                    }
+                },
+                error:function(data, textStatus){
+                    alert("전송 실패");
+                }
+            });
+        });
+
 
         $('select[name=memEmail3]').change(function() {
 			if($(this).val()==""){
