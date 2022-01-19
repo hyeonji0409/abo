@@ -19,6 +19,7 @@ public class MemberController {
     MemberService service;
     @Setter(onMethod_ = {@Autowired})
     private PasswordEncoder passwordEncoder;
+    
     // 회원가입 폼 이동
     @RequestMapping("/join")
     public String viewJoin() {
