@@ -33,7 +33,7 @@
 					<td colspan="3" class="title">${proj.projTitle }</td>
 				</tr>
 				<tr>
-					<td colspan="4" id="content">${proj.projContent }</td>
+					<td colspan="4" id="content"><textarea class="form-control" id="p_content" name="projContent">${proj.projContent }</textarea></td>
 				</tr>
 				<%-- <tr>
 				<td colspan="2">
