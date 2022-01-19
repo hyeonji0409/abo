@@ -8,15 +8,15 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="js/jquery-3.6.0.min.js"></script>
-<script src="js/login.js"></script>
-<script src="js/dropdown.js"></script>
-<script src="js/slideShow.js"></script>
-<script src="js/gallery.js"></script>
-<link rel="stylesheet" href="css/common.css">
-<link rel="stylesheet" href="css/index.css">
-<link rel="stylesheet" href="css/menu.css">
-<link rel="stylesheet" href="css/slideShow.css">
+<script src="/js/jquery-3.6.0.min.js"></script>
+<script src="/js/login.js"></script>
+<script src="/js/dropdown.js"></script>
+<script src="/js/slideShow.js"></script>
+<script src="/js/gallery.js"></script>
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/css/menu.css">
+<link rel="stylesheet" href="/css/slideShow.css">
 <!-- <link rel="stylesheet" href="css/gallery.css"> -->
 <title>Artineer</title>
 
@@ -45,39 +45,20 @@
 		<!-- 프로젝트 파일 연결 -->
 		<div class="project_link">
 			<div class="project_link_info">
-				<a href="project.html">프로젝트 구경하기 >></a>
+				<a href="<c:url value='/listAllProject' />">프로젝트 구경하기 >></a>
 				<h4>다양하고 재미있는 프로젝트!!!</h4>
 			</div>
 			<div class="index_galleylist">
 				<ul>
-					<li><a href="#">
-							<div class="index_screen">
-								<div class="top">MoneyDare</div>
-								<div class="bottom">주식 자동화 프로그램</div>
-								<img src="image/moneydare.png">
-							</div>
-					</a></li>
-					<li><a href="#">
-							<div class="index_screen">
-								<div class="top">Month_Diary</div>
-								<div class="bottom">한달 취미 챌린지</div>
-								<img src="image/lstm.png">
-							</div>
-					</a></li>
-					<li><a href="#">
-							<div class="index_screen">
-								<div class="top">TALE's GAME</div>
-								<div class="bottom">초등학생 대상 코딩 스토리 게임</div>
-								<img src="image/tale'sgame.png">
-							</div>
-					</a></li>
-					<li><a href="#">
-							<div class="index_screen">
-								<div class="top">마음만은 늘 함께</div>
-								<div class="bottom">운동 커뮤니티 어플리케이션</div>
-								<img src="image/garlic.jpg">
-							</div>
-					</a></li>
+					<c:forEach items="${projList}" var="proj" begin="0" end="4">
+						<li><a href="#">
+								<div class="index_screen">
+									<div class="top">${proj.projTitle}</div>
+									<div class="bottom">${proj.projContent}</div>
+									<img src="image/moneydare.png">
+								</div>
+						</a></li>
+					</c:forEach>
 				</ul>
 			</div>
 		</div>

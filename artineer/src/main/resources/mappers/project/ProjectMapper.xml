@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.abo.artineer.dao.IProjectDAO">
+
+	<resultMap id="projResult" type="com.abo.artineer.model.ProjectVO">
+		<result property="projNo" column="projNo" />
+		<result property="memName" column="memName" />
+		<result property="memYear" column="memYear" />
+		<result property="projTitle" column="projTitle" />
+		<result property="projContent" column="projContent" />
+		<result property="projHit" column="projHit" />
+		<result property="projfile" column="projfile" />
+		<result property="createDate" column="createDate" />
+		<result property="comment" column="comment" />
+		<result property="ctgId" column="ctgId" />
+	</resultMap>
+
+	<!-- 전체 글 조회 -->
+	<select id="listAllProject" resultMap="projResult">
+		SELECT * FROM project ORDER BY projNo DESC
+	</select>
+
+	<!-- 글 작성 -->
+	<insert id="createProject" parameterType="com.abo.artineer.model.ProjectVO">
+		INSERT INTO project (projTitle, projContent)
+		VALUES (#{projTitle}, #{projContent})
+	</insert>
+	
+	<!-- 글 상세보기 -->
+	<select id="detailViewProject" parameterType="string" resultType="com.abo.artineer.model.ProjectVO">
+		SELECT * FROM project WHERE projNo=#{projNo}
+	</select>
+	
+	<!-- 글 수정 -->
+	<update id="updateProject" parameterType="com.abo.artineer.model.ProjectVO">
+		UPDATE project SET projTitle = #{projTitle}, projContent = #{projContent}, ctgId = #{ctgId}
+		WHERE projNo = #{projNo}
+	</update>
+	
+	<!-- 글 삭제 -->
+	<delete id="deleteProject" parameterType="string">
+		DELETE FROM project WHERE projNo = #{projNo}
+	</delete>
+
+	<!-- 검색 기능 구현 -->
+	<select id="projectSearch" resultMap="projResult" parameterType="hashmap">
+		SELECT * FROM project WHERE
+		<choose>
+			<when test="type != null and type.equals('projTitle')">
+				<!-- 상품 명으로 검색 -->
+				projTitle LIKE CONCAT('%', #{keyword}, '%')
+			</when>
+				
+			<when test="type != null and type.equals('memName')">
+				<!-- 제조 회사로 검색 -->
+				memName LIKE CONCAT('%', #{keyword}, '%')
+			</when>
+		</choose>
+	</select>
+</mapper> 
