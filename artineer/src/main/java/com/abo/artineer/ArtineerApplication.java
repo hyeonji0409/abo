@@ -8,12 +8,16 @@ import org.springframework.context.annotation.ComponentScan;
 import com.abo.artineer.controller.HomeController;
 import com.abo.artineer.dao.INoticeDAO;
 import com.abo.artineer.service.NoticeService;
+import com.abo.artineer.controller.ProjectController;
+import com.abo.artineer.dao.IProjectDAO;
 
 @SpringBootApplication
-//컨트롤러 빈 추가
 @ComponentScan(basePackageClasses = HomeController.class)
 @ComponentScan(basePackageClasses = NoticeService.class)
 @MapperScan(basePackageClasses = INoticeDAO.class)
+@ComponentScan(basePackageClasses = ProjectController.class)
+@ComponentScan(basePackages = {"com.abo.artineer.service"})
+@MapperScan(basePackageClasses = IProjectDAO.class)
 public class ArtineerApplication {
 
 	public static void main(String[] args) {
