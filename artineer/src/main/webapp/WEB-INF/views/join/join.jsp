@@ -11,7 +11,7 @@
   <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   <script src="js/checkForm.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="js/memIdCheck.js"></script>
+<%--  <script src="js/memIdCheck.js"></script>--%>
 </head>
 <body>
 <div id="wrap">

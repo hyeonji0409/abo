@@ -92,5 +92,11 @@ public class HomeController {
 			service.updateNotice(noti);		
 			return "redirect:./listNotice";  // 전체 상품 조회 페이지로 포워딩
 		}
+
+		// 멘토링 페이지 이동
+		@RequestMapping("/mento")
+		public String moveMento() {
+		return "mento/mento";
+		}
 		
 }
