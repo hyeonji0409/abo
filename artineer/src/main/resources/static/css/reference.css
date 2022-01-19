@@ -90,7 +90,6 @@
 .sub_news .data, .sub_news .hit { 
     padding: 0; 
     color: rgba(51,51,51); ;
-    font-size: 82px; 
     line-height: normal; 
 }
 .sub_news .title { 

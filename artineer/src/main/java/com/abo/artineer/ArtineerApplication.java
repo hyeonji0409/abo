@@ -1,5 +1,6 @@
 package com.abo.artineer;
 
+
 import com.abo.artineer.controller.MemberController;
 import com.abo.artineer.dao.IMemberDAO;
 import org.apache.ibatis.annotations.Mapper;
@@ -9,15 +10,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 import com.abo.artineer.controller.HomeController;
+import com.abo.artineer.dao.INoticeDAO;
+import com.abo.artineer.service.NoticeService;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.abo.artineer.service"})
-//컨트롤러 빈 추가
 @ComponentScan(basePackageClasses = HomeController.class)
 @ComponentScan(basePackageClasses = MemberController.class)
-
-// mapper 빈 추가
 @MapperScan(basePackageClasses = IMemberDAO.class)
+@ComponentScan(basePackageClasses = NoticeService.class)
+@MapperScan(basePackageClasses = INoticeDAO.class)
 
 public class ArtineerApplication {
 
