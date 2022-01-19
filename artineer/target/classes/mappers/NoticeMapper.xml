@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.abo.artineer.dao.INoticeDAO">
+  		<resultMap  id="noticeResult" type="com.abo.artineer.model.NoticeVO">
+  			<result property="noticeNo" column="noticeNo" />
+  			<result property="memName" column="memName" />
+  			<result property="memYear" column="memYear" />
+  			<result property="noticeTitle" column="noticeTitle" />
+  			<result property="noticeContent" column="noticeContent" />	
+  			<result property="noticeHit" column="noticeHit" />
+  			<result property="noticeFile" column="noticeFile" />
+  			<result property="createDate" column="createDate" />
+  			<result property="comment" column="comment" />
+  		</resultMap> 
+  
+  
+  <!-- 공지사항 조회 -->
+  <select id = "listNotice" resultMap="noticeResult">
+  			SELECT * FROM notice ORDER BY noticeNo
+  		</select>
+  	
+   <!-- 글 상세조회 -->
+ <select id="detailNotice" parameterType="int"  resultType="com.abo.artineer.model.NoticeVO">
+  			SELECT * FROM notice WHERE noticeNo=#{noticeNo}  		
+  		</select>
+  		
+  	
+ <!-- 글쓰기 -->
+ <insert id="insertNotice" parameterType="com.abo.artineer.model.NoticeVO">
+  			INSERT INTO notice (noticeNo,memName,memYear,noticeTitle,noticeContent,noticeHit,noticeFile,createDate,comment)
+  			VALUES (#{noticeNo}, #{memName}, #{memYear}, #{noticeTitle}, #{noticeContent}, #{noticeHit}, #{noticeFile}, #{createDate}, #{comment})
+  		</insert>
+  		
+  		<!-- 삭제  -->
+  		<delete id="deleteNotice"  parameterType="int">
+  			DELETE FROM notice WHERE noticeNo=#{noticeNo}
+  		</delete>
+  		
+  		<!-- 수정 -->
+  		<update id="updateNotice" parameterType="com.abo.artineer.model.NoticeVO">
+  			UPDATE notice SET memName=#{memName},memYear=#{memYear},
+  			noticeTitle=#{noticeTitle},
+  			noticeContent=#{noticeContent},
+  			noticeHit=#{noticeHit},
+  			noticeFile=#{noticeFile},
+  			createDate=#{createDate},
+  			comment=#{comment}
+  			WHERE noticeNo=#{noticeNo}
+  		</update>
+
+
+   
+  </mapper>
