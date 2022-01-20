@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 import com.abo.artineer.controller.MemberController;
-import com.abo.artineer.controller.NoticeController;
+import com.abo.artineer.controller.HomeController;
 import com.abo.artineer.controller.ProjectController;
 import com.abo.artineer.controller.ReferenceController;
 import com.abo.artineer.dao.IMemberDAO;
@@ -19,7 +19,7 @@ import com.abo.artineer.service.NoticeService;
 @SpringBootApplication
 
 @ComponentScan(basePackages = {"com.abo.artineer.service"})
-@ComponentScan(basePackageClasses = NoticeController.class)
+@ComponentScan(basePackageClasses = HomeController.class)
 @ComponentScan(basePackageClasses = MemberController.class)
 @MapperScan(basePackageClasses = IMemberDAO.class)
 @ComponentScan(basePackageClasses = NoticeService.class)

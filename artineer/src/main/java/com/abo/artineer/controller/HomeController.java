@@ -21,7 +21,7 @@ import com.abo.artineer.service.NoticeService;
 
 
 @Controller
-public class NoticeController {
+public class HomeController {
 
 	
 	@Autowired
