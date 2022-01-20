@@ -1,6 +1,7 @@
 package com.abo.artineer.controller;
 
 import com.abo.artineer.model.MemberVO;
+import com.abo.artineer.service.MailService;
 import com.abo.artineer.service.MemberService;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 
@@ -19,6 +22,8 @@ import static java.lang.System.out;
 public class MemberController {
     @Autowired
     MemberService service;
+    @Autowired
+    MailService ms;
     @Setter(onMethod_ = {@Autowired})
     private PasswordEncoder passwordEncoder;
     
@@ -114,17 +119,17 @@ public class MemberController {
         return PwCheck;
     }
 
-    // 비밀번호 찾기 폼 이동
-    @RequestMapping("/changePw")
-    public String findPwtaskInComplete() {
-        return "/login/changePw";
-    }
+//    // 비밀번호 찾기 폼 이동
+//    @RequestMapping("/changePw")
+//    public String findPwtaskInComplete() {
+//        return "/login/changePw";
+//    }
 
-    @ResponseBody
-    @RequestMapping("/changePwTask")
-    public void findPwtaskComplete(MemberVO memberVO) {
-        service.updatePw(memberVO);
-//        out.println("<script>alert('비밀번호가 변경되었습니다. /n다시 로그인 해주세요.'</script>");
-//        return "/login/login";
+    @RequestMapping("/login/authChangePw")
+    public ModelAndView mailAuth(HttpServletRequest req) {
+        System.out.println("mail_ok() 호출");
+        ms.sendMail(req.getParameter("pw_email_input"));
+        ModelAndView modelAndView = new ModelAndView( "login/authChangePw");
+        return modelAndView;
     }
 }
