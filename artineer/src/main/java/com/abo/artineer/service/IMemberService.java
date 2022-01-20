@@ -2,6 +2,7 @@ package com.abo.artineer.service;
 
 import com.abo.artineer.model.MemberVO;
 import java.util.HashMap;
+import java.util.Map;
 
 public interface IMemberService {
     MemberVO loginCheck(HashMap<String, Object> map);
@@ -10,5 +11,4 @@ public interface IMemberService {
     String requestPw(String memId); // 패스워드 조회
     String findId(String memEmail, String memName); // 아이디 찾기
     String findPw(String memId, String memName, String memEmail); // 비밀번호 찾기
-    void updatePw(MemberVO memberVO); // 비밀번호 변경
 }

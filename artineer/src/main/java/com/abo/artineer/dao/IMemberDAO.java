@@ -2,6 +2,7 @@ package com.abo.artineer.dao;
 
 import com.abo.artineer.model.MemberVO;
 import java.util.HashMap;
+import java.util.Map;
 
 public interface IMemberDAO {
     MemberVO loginCheck(HashMap<String, Object> map); // 로그인
@@ -10,5 +11,4 @@ public interface IMemberDAO {
     String requestPw(String memId); // 패스워드 조회
     String findId(String memEmail, String memName); // 아이디 찾기
     String findPw(String memId, String memName, String memEmail); // 비밀번호 찾기
-    void updatePw(MemberVO memberVO); // 비밀번호 변경
 }

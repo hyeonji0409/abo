@@ -9,6 +9,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.Map;
 
 @Service
 public class MemberService implements IMemberService {
@@ -47,10 +48,4 @@ public class MemberService implements IMemberService {
         return dao.findPw(memId, memName, memEmail);
     }
 
-    @Override
-    public void updatePw(MemberVO memberVO) {
-        String encodedPassword = passwordEncoder.encode(memberVO.getMemPw());
-        memberVO.setMemPw(encodedPassword);
-        dao.updatePw(memberVO);
-    }
 }
