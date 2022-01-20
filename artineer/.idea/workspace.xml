@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eab96ffc-06f2-42f6-95e8-37751577eca0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/abo/artineer/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abo/artineer/controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/abo/artineer/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/controller/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/abo/artineer/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/controller/MemberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/abo/artineer/dao/IMemberDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/dao/IMemberDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/abo/artineer/service/IMemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/service/IMemberService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/abo/artineer/service/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/service/MemberService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mappers/MemberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/MemberMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/checkForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/checkForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/findForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/findForm.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +51,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/css" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.23182711" />
   </component>

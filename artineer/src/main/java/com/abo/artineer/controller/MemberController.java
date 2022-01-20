@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 
+import static java.lang.System.out;
+
 @Controller
 public class MemberController {
     @Autowired
@@ -46,7 +48,7 @@ public class MemberController {
     // 회원가입
     @RequestMapping("/joinComplete")
     public String join(MemberVO mem) {
-        System.out.println(mem.getMemId());
+        out.println(mem.getMemId());
         service.join(mem);
         return "redirect:/";
     }
@@ -69,11 +71,18 @@ public class MemberController {
         MemberVO vo = service.loginCheck(param);
         String EncodedPw = service.requestPw(memId);
         String result = "fail";
+<<<<<<< HEAD
         System.out.println("memPw : " + memPw);
         System.out.println("EncodedPw : " + EncodedPw);
         System.out.println("vo : " + vo);
         System.out.println("vo pw: " + vo.getMemPw());
         System.out.println("passwordEncoder.matches(memPw, EncodedPw)) : " + passwordEncoder.matches(memPw, EncodedPw));
+=======
+        out.println("memPw : " + memPw);
+        out.println("EncodedPw : " + EncodedPw);
+        out.println("vo : " + vo);
+        out.println("passwordEncoder.matches(memPw, EncodedPw)) : " + passwordEncoder.matches(memPw, EncodedPw));
+>>>>>>> b2884e041830dfdc44e002cea9e0dd90eb6f21d4
         if(vo != null && passwordEncoder.matches(memPw, EncodedPw)) {
             session.setAttribute("sid", vo.getMemName());
             session.setAttribute("memId", memId);
@@ -99,24 +108,32 @@ public class MemberController {
     public String findIdtask(@RequestParam("email_input") String email_input,
                              @RequestParam("name_input") String name_input) {
         String ID = service.findId(email_input, name_input);
-        System.out.println("ID : " + ID);
+        out.println("ID : " + ID);
         return ID;
     }
 
-    // 비밀번호 찾기
+    // 비밀번호 찾기 정보 검증
     @ResponseBody
     @RequestMapping("/findPwtask")
     public String findPwtask(@RequestParam("pw_id_input") String pw_id_input,
                              @RequestParam("pw_name_input") String pw_name_input,
                              @RequestParam("pw_email_input") String pw_email_input) {
         String PwCheck = service.findPw(pw_id_input, pw_name_input, pw_email_input);
-        System.out.println("PW : " + PwCheck);
+        out.println("PW : " + PwCheck);
         return PwCheck;
     }
 
     // 비밀번호 찾기 폼 이동
     @RequestMapping("/changePw")
-    public String findPwtaskComplete() {
+    public String findPwtaskInComplete() {
         return "/login/changePw";
+    }
+
+    @ResponseBody
+    @RequestMapping("/changePwTask")
+    public void findPwtaskComplete(MemberVO memberVO) {
+        service.updatePw(memberVO);
+//        out.println("<script>alert('비밀번호가 변경되었습니다. /n다시 로그인 해주세요.'</script>");
+//        return "/login/login";
     }
 }

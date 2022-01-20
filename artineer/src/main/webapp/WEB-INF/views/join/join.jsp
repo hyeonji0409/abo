@@ -9,9 +9,15 @@
   <link rel="stylesheet" href="/css/join.css">
   <script src="/js/jquery-3.6.0.min.js"></script>
   <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<<<<<<< HEAD
   <script src="/js/checkForm.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/memIdCheck.js"></script>
+=======
+  <script src="js/checkForm.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+<%--  <script src="js/memIdCheck.js"></script>--%>
+>>>>>>> b2884e041830dfdc44e002cea9e0dd90eb6f21d4
 </head>
 <body>
 <div id="wrap">
