@@ -49,7 +49,7 @@
 					</c:if>
 					<!-- 로그인 성공 후에 보여줄 메뉴 항목 -->
 					<c:if test="${not empty sessionScope.sid}">
-						<li style="color: white">${sessionScope.sid} 님 환영합니다!</li>
+						<li style="color: white">${sessionScope.sid} 님 환영합니다!&nbsp;</li>
 						<li><a href="<c:url value='/logout'/> ">로그아웃</a></li>
 					</c:if>
 				</ul>

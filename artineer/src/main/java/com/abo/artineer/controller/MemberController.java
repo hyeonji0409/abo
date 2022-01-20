@@ -4,22 +4,14 @@ import com.abo.artineer.model.MemberVO;
 import com.abo.artineer.service.MemberService;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.mail.internet.MimeMessage;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.HashMap;
-import java.util.Random;
 
 import static java.lang.System.out;
 
@@ -29,7 +21,6 @@ public class MemberController {
     MemberService service;
     @Setter(onMethod_ = {@Autowired})
     private PasswordEncoder passwordEncoder;
-    JavaMailSender mailSender;
     
     // 회원가입 폼 이동
     @RequestMapping("/join")
@@ -124,17 +115,16 @@ public class MemberController {
     }
 
     // 비밀번호 찾기 폼 이동
-    @RequestMapping("/findPwtask")
+    @RequestMapping("/changePw")
     public String findPwtaskInComplete() {
-        return "index";
+        return "/login/changePw";
     }
 
-//    @ResponseBody
-//    @RequestMapping("/changePwTask")
-//    public void findPwtaskComplete(MemberVO memberVO) {
-//        service.updatePw(memberVO);
-//        out.println(memberVO);
-////        out.println("<script>alert('비밀번호가 변경되었습니다. /n다시 로그인 해주세요.'</script>");
-////        return "/login/login";
-//    }
+    @ResponseBody
+    @RequestMapping("/changePwTask")
+    public void findPwtaskComplete(MemberVO memberVO) {
+        service.updatePw(memberVO);
+//        out.println("<script>alert('비밀번호가 변경되었습니다. /n다시 로그인 해주세요.'</script>");
+//        return "/login/login";
+    }
 }
