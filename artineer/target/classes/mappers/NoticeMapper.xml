@@ -17,22 +17,46 @@
   		</resultMap> 
   
   
-  <!-- 공지사항 조회 -->
-  <select id = "listNotice" resultMap="noticeResult">
-  			SELECT * FROM notice ORDER BY noticeNo
-  		</select>
+		<!-- 공지사항 조회 -->
+		<select id = "listNotice" resultMap="noticeResult">
+	  			SELECT * FROM notice ORDER BY noticeNo 
+	  	</select>
+	  	
+	  <!-- 페이징 -->
+	  
+	<!-- 총 게시글 갯수 출력 -->
+		<select id="countBoard" resultType="int">
+			SELECT COUNT(*) FROM notice
+		</select>
+		
+		<!-- 페이징 처리 후 게시글 조회@ROWNUM:=@ROWNUM +1 AS RN -->
+		<select id="selectBoard" resultType="com.abo.artineer.model.NoticeVO">
+		SELECT * 
+		FROM (
+			SELECT @ROWNUM:=@ROWNUM +1 AS RN, N.* 
+				FROM (
+						SELECT * FROM notice N
+						ORDER BY noticeNo DESC 
+						)N, (SELECT @ROWNUM:=0)A
+						)B
+			WHERE RN BETWEEN #{start} AND #{end}
+			</select>
+			
+	  
+	  <!--  -->
+	  	
   	
-   <!-- 글 상세조회 -->
- <select id="detailNotice" parameterType="int"  resultType="com.abo.artineer.model.NoticeVO">
-  			SELECT * FROM notice WHERE noticeNo=#{noticeNo}  		
-  		</select>
-  		
-  	
- <!-- 글쓰기 -->
- <insert id="insertNotice" parameterType="com.abo.artineer.model.NoticeVO">
-  			INSERT INTO notice (noticeNo,memName,memYear,noticeTitle,noticeContent,noticeHit,noticeFile,createDate,comment)
-  			VALUES (#{noticeNo}, #{memName}, #{memYear}, #{noticeTitle}, #{noticeContent}, #{noticeHit}, #{noticeFile}, #{createDate}, #{comment})
-  		</insert>
+	   	<!-- 글 상세조회 -->
+		 <select id="detailNotice" parameterType="int"  resultType="com.abo.artineer.model.NoticeVO">
+	  			SELECT * FROM notice WHERE noticeNo=#{noticeNo}  		
+	  	 </select>
+	  		
+
+		 <!-- 글쓰기 -->
+		 <insert id="insertNotice" parameterType="com.abo.artineer.model.NoticeVO">
+	  			INSERT INTO notice (noticeNo,noticeTitle,noticeContent)
+	  			VALUES (#{noticeNo},#{noticeTitle}, #{noticeContent})
+	  	 </insert>
   		
   		<!-- 삭제  -->
   		<delete id="deleteNotice"  parameterType="int">
@@ -41,16 +65,21 @@
   		
   		<!-- 수정 -->
   		<update id="updateNotice" parameterType="com.abo.artineer.model.NoticeVO">
-  			UPDATE notice SET memName=#{memName},memYear=#{memYear},
-  			noticeTitle=#{noticeTitle},
-  			noticeContent=#{noticeContent},
-  			noticeHit=#{noticeHit},
-  			noticeFile=#{noticeFile},
-  			createDate=#{createDate},
-  			comment=#{comment}
+  			UPDATE notice 
+  			SET noticeTitle=#{noticeTitle},
+  				noticeContent=#{noticeContent}
   			WHERE noticeNo=#{noticeNo}
   		</update>
+  		
+  		<!-- 조회수 올리기 -->
+		<update id="hitUp" parameterType="int">
+			update notice set noticeHit = noticeHit + 1 where noticeNo = #{noticeNo}
+		</update>
+	  		
+  	
 
-
-   
+  
+  
+  
+  
   </mapper>

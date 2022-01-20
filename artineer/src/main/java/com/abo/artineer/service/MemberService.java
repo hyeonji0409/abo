@@ -12,11 +12,19 @@ import java.util.HashMap;
 
 @Service
 public class MemberService implements IMemberService {
+<<<<<<< HEAD
 	@Autowired
     @Qualifier("IMemberDAO")
     IMemberDAO dao;
 
 	@Autowired
+=======
+    @Autowired
+    @Qualifier("IMemberDAO")
+    IMemberDAO dao;
+
+    @Autowired
+>>>>>>> bch
     private PasswordEncoder passwordEncoder;
 
     @Override
