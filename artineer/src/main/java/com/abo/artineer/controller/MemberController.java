@@ -82,6 +82,7 @@ public class MemberController {
         out.println("passwordEncoder.matches(memPw, EncodedPw)) : " + passwordEncoder.matches(memPw, EncodedPw));
         if(vo != null && passwordEncoder.matches(memPw, EncodedPw)) {
             session.setAttribute("sid", vo.getMemName());
+            session.setAttribute("memId", memId);
             result = "success";
         }
         return result;

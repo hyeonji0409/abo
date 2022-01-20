@@ -15,7 +15,15 @@ public class ProjectVO {
 	private int comment;
 	private String ctgId;
 	
+	private String memId;
 	
+	
+	public String getMemId() {
+		return memId;
+	}
+	public void setMemId(String memId) {
+		this.memId = memId;
+	}
 	public int getProjNo() {
 		return projNo;
 	}

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +29,7 @@
                                 <th class="table_th">글쓴이</th>
                                 <td class="table_name">${noti.memName }</td>
                                 <th class="table_th" colspan="1">날짜</th>
-                                <td class="table_date" colspan="1" align="center">${noti.createDate }</td>
+                                <td class="table_date" colspan="1" align="center"><fmt:formatDate value='${noti.createDate }' pattern="yyyy-MM-dd KK:mm:ss"/></td>
                             </tr>
                             <tr>
                                 <th class="table_th">첨부파일</th>
