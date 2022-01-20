@@ -55,7 +55,7 @@ public class ProjectController {
 			out_write.println("<script>alert('회원만 사용 가능한 기능입니다.');</script>");
 			out_write.flush();
 
-			return "index";
+			return "project/projectListView";
 
 		} else {
 			// 로그인이 되어있는 경우
