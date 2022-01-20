@@ -37,7 +37,7 @@
                                     
                                 </td>
                                 <th class="table_th">조회수</th>
-                                <td class="table_hit" colspan="1" align="center"align="right">${ref.noticeHit }</td>
+                                <td class="table_hit" colspan="1" align="center"align="right">${ref.refHit }</td>
                             </tr>
                             <tr>
                                 <td class="table_view" colspan="8">
@@ -46,7 +46,7 @@
                                 </td>
                             </tr>
                             <tr class="view_edit">
-                                <td align="left">댓글(${noti.comment})</td>
+                                <td align="left">댓글(${ref.comment})</td>
                                 <td colspan="8" align="right">
                                     <button onclick="history.back(-1)" style="cursor:pointer;">목록</button>
                                     

@@ -83,8 +83,8 @@ public class ReferenceController {
 		}
 		
 		// 글 수정 : 수정된 글 DB에 저장
-		@RequestMapping("/reference/updateNotice")
-		public String detailNotice(ReferenceVO refVo) {
+		@RequestMapping("/reference/updateReference")
+		public String detailReference(ReferenceVO refVo) {
 			service.updateReference(refVo);	
 			return "redirect:../refList";  // 공지사항 페이지로 포워딩
 		}

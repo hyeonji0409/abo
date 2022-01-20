@@ -50,14 +50,14 @@
 
     <div class="writeform">
         <main role="main" class="container">
-            <form name="form" action="<c:url value='/notice/insertNotice'/>" method="post">
+            <form name="form" action="<c:url value='/reference/insertReference'/>" method="post">
                 <!-- method="POST" action="/bulletin_wr01" -->
                 <div class="pt-1">
-                    <input type="text" name="noticeTitle" placeholder="제목을 입력하세요"
+                    <input type="text" name="refTitle" placeholder="제목을 입력하세요"
                         style="border: 0; border-radius:5px; width:100%; height: 50px; padding:5px; font-size: 40px;">
                 </div>
                 <div class="pt-1" id="writeSection">
-                    <textarea id="summernote" name="noticeContent"></textarea>
+                    <textarea id="summernote" name="refContent"></textarea>
                     <div class="pt-1 text-right" style="padding-bottom: 15%;">
                         <input type="file" name="profile" style="padding-top: 10px;">
                         <button class="btn btn-success" id="submit_btn" type="submit" 

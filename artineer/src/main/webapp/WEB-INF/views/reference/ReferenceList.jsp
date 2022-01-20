@@ -90,7 +90,7 @@
                            </caption>
                            <tbody class="sub_news" border="1" cellspacing="0">
 
-						<c:forEach items="${refList }" var="noti">
+						<c:forEach items="${refList }" var="ref">
                             <tr>
                                 <td>${ref.refNo }</td>
                                 <td class="title">
