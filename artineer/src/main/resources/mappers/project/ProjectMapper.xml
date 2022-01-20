@@ -18,6 +18,7 @@
 		<result property="createDate" column="createDate" />
 		<result property="comment" column="comment" />
 		<result property="ctgId" column="ctgId" />
+		<result property="memId" column="memId" />
 	</resultMap>
 
 	<!-- 전체 글 조회 -->
@@ -56,9 +57,9 @@
 				projTitle LIKE CONCAT('%', #{keyword}, '%')
 			</when>
 				
-			<when test="type != null and type.equals('memName')">
+			<when test="type != null and type.equals('projContent')">
 				<!-- 제조 회사로 검색 -->
-				memName LIKE CONCAT('%', #{keyword}, '%')
+				projContent LIKE CONCAT('%', #{keyword}, '%')
 			</when>
 		</choose>
 	</select>
@@ -75,4 +76,9 @@
 		UPDATE project SET projHit = projHit + 1
 		WHERE projNo = #{projNo}
 	</update>
+	
+	<!-- 카테고리별 글 조회 -->
+	<select id="listSearchProject" parameterType="string" resultType="com.abo.artineer.model.MemberVO">
+		SELECT * FROM project WHERE ctgId = #{ctgId} ORDER BY projNo DESC
+	</select>
 </mapper> 

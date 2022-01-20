@@ -49,7 +49,7 @@
 			</div>
 			<div class="index_galleylist">
 				<ul>
-					<c:forEach items="${projList}" var="proj" begin="0" end="4">
+					<c:forEach items="${projList}" var="proj" begin="0" end="3">
 						<li><a href="#">
 								<div class="index_screen">
 									<div class="top">${proj.projTitle}</div>
@@ -69,34 +69,15 @@
 			</div>
 			<div class="index_galleylist">
 				<ul>
-					<li><a href="#">
-							<div class="index_screen">
-								<div class="top">Hello Python</div>
-								<div class="bottom">야 너도 파이썬 할 수 있어!!</div>
-								<img src="image/hello_python.png">
-							</div>
-					</a></li>
-					<li><a href="#">
-							<div class="index_screen">
-								<div class="top">Deep Learning</div>
-								<div class="bottom">밑바닥부터 시작하는 딥러닝</div>
-								<img src="image/deeplearning.png">
-							</div>
-					</a></li>
-					<li><a href="#">
-							<div class="index_screen">
-								<div class="top">HAPPY JAVA CLASS</div>
-								<div class="bottom">Artineer Java Class</div>
-								<img src="image/java.png">
-							</div>
-					</a></li>
-					<li><a href="#">
-							<div class="index_screen">
-								<div class="top">찍어먹는 Python</div>
-								<div class="bottom">찍먹 파이썬 조건문편!!</div>
-								<img src="image/python.png">
-							</div>
-					</a></li>
+					<c:forEach items="${notiList}" var="noti" begin="0" end="3">
+						<li><a href="#">
+								<div class="index_screen">
+									<div class="top">${noti.noticeTitle}</div>
+									<div class="bottom">${noti.comment}</div>
+									<img src="image/moneydare.png">
+								</div>
+						</a></li>
+					</c:forEach>
 				</ul>
 			</div>
 		</div>
@@ -108,34 +89,15 @@
 			</div>
 			<div class="index_galleylist">
 				<ul>
-					<li><a href="#">
-							<div class="index_screen">
-								<div class="top">2021 AI 전시회</div>
-								<div class="bottom">AI 전시회</div>
-								<img src="image/ai.jpg">
-							</div>
-					</a></li>
-					<li><a href="#">
-							<div class="index_screen">
-								<div class="top">2019 MT</div>
-								<div class="bottom">in 부안</div>
-								<img src="image/sea.jpg">
-							</div>
-					</a></li>
-					<li><a href="#">
-							<div class="index_screen">
-								<div class="top">2019 MT</div>
-								<div class="bottom">in 부안</div>
-								<img src="image/soju.jpg">
-							</div>
-					</a></li>
-					<li><a href="#">
-							<div class="index_screen">
-								<div class="top">2018 멘토링</div>
-								<div class="bottom">멘토멘티 팀 나누기</div>
-								<img src="image/activity.jpg">
-							</div>
-					</a></li>
+					<c:forEach items="${projList}" var="proj" begin="0" end="3">
+						<li><a href="#">
+								<div class="index_screen">
+									<div class="top">${proj.projTitle}</div>
+									<div class="bottom">${proj.projContent}</div>
+									<img src="image/moneydare.png">
+								</div>
+						</a></li>
+					</c:forEach>
 				</ul>
 			</div>
 		</div>

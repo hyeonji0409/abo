@@ -22,4 +22,6 @@ public interface IProjectDAO {
 	void insertMemInfo(MemInfoVO memInfoDto); // 멤버 정보 저장
 	
 	void updateHit(int projHit); // 조회수 증가
+	
+	ArrayList<ProjectVO> listSearchroject(String ctgId);
 }

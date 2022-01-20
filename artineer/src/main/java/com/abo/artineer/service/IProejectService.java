@@ -19,4 +19,6 @@ public interface IProejectService {
 	MemberVO getMemberInfo(String memId); // 회원정보 가져오기
 	
 	void updateHit(int projHit); // 조회수 증가
+	
+	ArrayList<ProjectVO> listSearchroject(String ctgId); // 카테고리별 글 조회
 }

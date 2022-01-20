@@ -61,6 +61,11 @@ public class ProjectService implements IProejectService{
 		
 	}
 
+	@Override
+	public ArrayList<ProjectVO> listSearchroject(String ctgId) {
+		return dao.listSearchroject(ctgId);
+	}
+
 
 	
 

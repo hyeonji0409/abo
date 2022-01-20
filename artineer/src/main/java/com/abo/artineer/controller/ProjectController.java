@@ -8,12 +8,12 @@ import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
+import javax.servlet.http.HttpSession;import org.apache.ibatis.javassist.compiler.ast.Keyword;
 import org.apache.tomcat.util.http.fileupload.UploadContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -63,20 +63,7 @@ public class ProjectController {
 		}
 	}
 
-	/*
-	 * // 글 등록
-	 * 
-	 * @RequestMapping("/createProject") public String createProject(ProjectVO proj,
-	 * Model model) { //MemberVO memVo = service.getMemberInfo(memId[0]); //String
-	 * memName = memVo.getMemName();
-	 * 
-	 * // 작성자 정보 출력 위한 model저장 //model.addAttribute("memDto", memVo);
-	 * 
-	 * //System.out.println("memName 출력: " + memVo.getMemName());
-	 * //System.out.println(memVo.getMemId());
-	 * 
-	 * service.createProject(proj); return "redirect:./listAllProject"; }
-	 */
+	
 
 	// 글 등록
 	@RequestMapping("/createProject")
@@ -121,10 +108,21 @@ public class ProjectController {
 
 	// 검색
 	@ResponseBody
-	@RequestMapping("/search")
-	public ArrayList<ProjectVO> search(@RequestParam HashMap<String, Object> param, Model model) {
+	@RequestMapping("/projectSearch")
+	public ArrayList<ProjectVO> projectSearch(@RequestParam HashMap<String, Object> param, Model model, @RequestParam("keyword") String keyword) {
 		ArrayList<ProjectVO> projList = service.projectSearch(param);
 		model.addAttribute("projList", projList);
+		
+		System.out.println("검색중");
+		System.out.println(keyword + "키워드");
 		return projList;
+	}
+	
+	@RequestMapping("/listSearchProject/{ctgId}")
+	public String listSearchProject(@PathVariable String ctgId, Model model) {
+		ArrayList<ProjectVO> projList = service.listSearchroject(ctgId);
+		model.addAttribute("projList", projList);
+		
+		return "project/projectSearchListView";
 	}
 }

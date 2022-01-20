@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.abo.artineer.model.NoticeVO;
+import com.abo.artineer.model.ProjectVO;
 import com.abo.artineer.service.NoticeService;
+import com.abo.artineer.service.ProjectService;
 
 
 
@@ -27,9 +29,16 @@ public class HomeController {
 	
 	@Autowired
 	NoticeService service;
+	@Autowired
+	ProjectService proService;
 	
 	@RequestMapping("/")
-	public String viewindex() {
+	public String viewindex(Model model) {
+		ArrayList<ProjectVO> projList = proService.listAllProject();
+		model.addAttribute("projList", projList);
+		
+		ArrayList<NoticeVO> notiList = service.listNotice();
+		model.addAttribute("notiList", notiList);
 		return "index";
 	}
 	
@@ -92,5 +101,7 @@ public class HomeController {
 			service.updateNotice(noti);		
 			return "redirect:./listNotice";  // 전체 상품 조회 페이지로 포워딩
 		}
+		
+		
 		
 }
