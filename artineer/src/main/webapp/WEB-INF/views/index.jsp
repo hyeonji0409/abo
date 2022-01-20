@@ -62,7 +62,7 @@
 			</div>
 		</div>
 		<!-- 자료실 -->
-		<div class="project_link">
+		<%-- <div class="project_link">
 			<div class="project_link_info">
 				<a href="reference.html">강의자료 보러가기 >></a>
 				<h4>스터디 시간에 공부한 자료들을 공유받아요</h4>
@@ -73,14 +73,14 @@
 						<li><a href="#">
 								<div class="index_screen">
 									<div class="top">${noti.noticeTitle}</div>
-									<div class="bottom">${noti.comment}</div>
+									<div class="bottom">${noti.Content}</div>
 									<img src="image/moneydare.png">
 								</div>
 						</a></li>
 					</c:forEach>
 				</ul>
 			</div>
-		</div>
+		</div> --%>
 		<!-- 활동 사진 -->
 		<div class="project_link">
 			<div class="project_link_info">
