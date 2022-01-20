@@ -18,6 +18,7 @@
 #inputFile{
     padding-top: 5px;
     width: -webkit-fill-available;
+    background: none;
 }
 
 .content{

@@ -25,10 +25,10 @@
 		SELECT * FROM project ORDER BY projNo DESC
 	</select>
 
-	<!-- 글 작성 -->
+	<!-- 글 작성  -->
 	<insert id="createProject" parameterType="com.abo.artineer.model.ProjectVO">
-		INSERT INTO project (projTitle, projContent)
-		VALUES (#{projTitle}, #{projContent})
+		INSERT INTO project (projTitle, projContent, memId, projfile)
+		VALUES (#{projTitle}, #{projContent}, #{memId}, #{projfile})
 	</insert>
 	
 	<!-- 글 상세보기 -->
@@ -62,4 +62,17 @@
 			</when>
 		</choose>
 	</select>
+	
+	<!-- 회원 정보 반환 -->
+	<select id="getMemberInfo" parameterType="string" resultType="com.abo.artineer.model.MemberVO">
+		SELECT memId, memName, memYear
+		FROM member
+		WHERE memId=#{memId}
+	</select>
+	
+	<!-- 조회수 증가 -->
+	<update id="updateHit" parameterType="com.abo.artineer.model.ProjectVO">
+		UPDATE project SET projHit = projHit + 1
+		WHERE projNo = #{projNo}
+	</update>
 </mapper> 

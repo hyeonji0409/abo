@@ -17,7 +17,7 @@ import java.util.HashMap;
 public class MemberController {
     @Autowired
     MemberService service;
-    @Setter(onMethod_ = {@Autowired})
+    @Autowired
     private PasswordEncoder passwordEncoder;
     
     // 회원가입 폼 이동
@@ -72,9 +72,11 @@ public class MemberController {
         System.out.println("memPw : " + memPw);
         System.out.println("EncodedPw : " + EncodedPw);
         System.out.println("vo : " + vo);
+        System.out.println("vo pw: " + vo.getMemPw());
         System.out.println("passwordEncoder.matches(memPw, EncodedPw)) : " + passwordEncoder.matches(memPw, EncodedPw));
         if(vo != null && passwordEncoder.matches(memPw, EncodedPw)) {
             session.setAttribute("sid", vo.getMemName());
+            session.setAttribute("memId", memId);
             result = "success";
         }
         return result;

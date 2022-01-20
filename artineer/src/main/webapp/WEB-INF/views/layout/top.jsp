@@ -9,19 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/js/jquery-3.6.0.min.js"></script>
-    <script src="/js/login.js"></script>
     <script src="/js/dropdown.js"></script>
-    <script src="/js/slideShow.js"></script>
-    <script src="/js/gallery.js"></script>
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/menu.css">
-    <link rel="stylesheet" href="/css/slideShow.css">
-    <link rel="stylesheet" href="/css/reference.css">
-    <link rel="stylesheet" href="/css/gallery.css">
-    <link rel="stylesheet" href="/css/detailNotice.css">
     <title>Artineer</title>
-
 </head>
 <body>
 	<header id="headerBox">

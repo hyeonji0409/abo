@@ -28,8 +28,8 @@
         <section>
             <div id="ctg">
                 <div class="galleryInfo">
-                    <h1>Gallery</h1>
-                    <h4>Artineer 활동사진 입니다</h4>
+                    <h1>Project</h1>
+                    <h4>직접 만든 프로젝트를 공유해보세요~</h4>
                 </div>
             </div>
         </section>
@@ -58,7 +58,7 @@
 								<img src="image/ai.jpg">
 							</div>
 							<div>
-								<h3>글쓴이 : ${proj.memName} | 날짜 : ${proj.createDate}</h3>
+								<h3>글쓴이 : ${proj.memId} | 날짜 : ${proj.createDate}</h3>
 							</div>
 					</a></li>
 				</c:forEach>

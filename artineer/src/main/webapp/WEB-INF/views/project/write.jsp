@@ -17,14 +17,19 @@
 
 		<!-- TOP -->
 		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
-		<form name="form" method="post" action="<c:url value='/createProject' />">
+		<form name="form" method="post"
+			action="<c:url value='/createProject' />"
+			enctype="multipart/form-data">
 			<div class="container">
 				<div class="content">
-	
+
 					<div class="row justify-content-md-center">
 						<div class="col-sm-9">
 							<div class="input-group mb-3">
-								<input type="text" id="projTitle" name="projTitle" placeholder="제목을 입력하세요">
+								<input type="text" id="projTitle" name="projTitle"
+									placeholder="제목을 입력하세요">
+								<%-- <input type="hidden" name="memName" value="${memDto.memName }"> --%>
+								<%-- <input type="hidden" name="memYear" value="${memDto.memYear }"> --%>
 							</div>
 							<!-- <div class="input-group mb-3">
 								<select class="custom-select" id="inputGroupSelect03">
@@ -36,13 +41,14 @@
 							</div> -->
 						</div>
 					</div>
-	
+
 					<hr>
-	
+
 					<div class="row justify-content-md-center">
 						<div class="col_c" style="margin-bottom: 30px">
 							<div class="input-group">
-								<textarea class="form-control" id="p_content" name="projContent"></textarea>
+								<textarea class="form-control" id="p_content" name="projContent"
+									placeholder="내용을 입력하세요"></textarea>
 								<script type="text/javascript">
 									CKEDITOR.replace('p_content', {
 										height : 350
@@ -51,16 +57,22 @@
 							</div>
 						</div>
 					</div>
-	
+
 					<div class="inputFile">
-	                    <input id="inputFile" type="file" name="profile">
-	                </div>
-	                
-	                <button type="submit" class="btn btn-primary" id="writeBtn">글쓰기</button>
-	                <button type="reset" class="btn btn-primary" id="writeBtn">취소</button>
+						<input id="inputFile" type="file" name="profile">
+					</div>
+
+					<button type="submit" id="writeBtn">글쓰기</button>
+					<button type="reset" id="writeBtn">취소</button>
 				</div>
 			</div>
 		</form>
+		<script>
+			$("#inputFile").on("change", function() {
+				var fileName = $(this).val().split("\\").pop();
+				$(this).siblings(".inputFile")
+			})
+		</script>
 
 
 		<!-- bottom -->
