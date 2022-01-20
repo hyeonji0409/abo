@@ -71,18 +71,10 @@ public class MemberController {
         MemberVO vo = service.loginCheck(param);
         String EncodedPw = service.requestPw(memId);
         String result = "fail";
-<<<<<<< HEAD
-        System.out.println("memPw : " + memPw);
-        System.out.println("EncodedPw : " + EncodedPw);
-        System.out.println("vo : " + vo);
-        System.out.println("vo pw: " + vo.getMemPw());
-        System.out.println("passwordEncoder.matches(memPw, EncodedPw)) : " + passwordEncoder.matches(memPw, EncodedPw));
-=======
         out.println("memPw : " + memPw);
         out.println("EncodedPw : " + EncodedPw);
         out.println("vo : " + vo);
         out.println("passwordEncoder.matches(memPw, EncodedPw)) : " + passwordEncoder.matches(memPw, EncodedPw));
->>>>>>> b2884e041830dfdc44e002cea9e0dd90eb6f21d4
         if(vo != null && passwordEncoder.matches(memPw, EncodedPw)) {
             session.setAttribute("sid", vo.getMemName());
             session.setAttribute("memId", memId);
