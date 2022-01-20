@@ -34,9 +34,9 @@
                 height: 400
             });
 
-           <!-- $('#submit_btn').on('click', function () {
+            $('#submit_btn').on('click', function () {
                 alert("글 작성 완료");
-                window.history.go(-2);-->
+                window.history.go(-2);
             });
         });
     </script>
@@ -54,10 +54,10 @@
                 <!-- method="POST" action="/bulletin_wr01" -->
                 <div class="pt-1">
                     <input type="text" name="noticeTitle" placeholder="제목을 입력하세요"
-                        style="border: 0; border-radius:5px; width:100%; height: 50px; padding:5px; font-size: 40px;">${noti.noticeTitle }
+                        style="border: 0; border-radius:5px; width:100%; height: 50px; padding:5px; font-size: 40px;">
                 </div>
                 <div class="pt-1" id="writeSection">
-                    <textarea id="summernote" name="noticeContent">${noti.noticeContent }</textarea>
+                    <textarea id="summernote" name="noticeContent"></textarea>
                     <div class="pt-1 text-right" style="padding-bottom: 15%;">
                         <input type="file" name="profile" style="padding-top: 10px;">
                         <button class="btn btn-success" id="submit_btn" type="submit" 

@@ -1,21 +1,22 @@
 package com.abo.artineer;
 
-
 import com.abo.artineer.controller.MemberController;
 import com.abo.artineer.dao.IMailDAO;
 import com.abo.artineer.dao.IMemberDAO;
 import com.abo.artineer.service.MailService;
-import org.apache.ibatis.annotations.Mapper;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
-
+import com.abo.artineer.controller.MemberController;
 import com.abo.artineer.controller.HomeController;
-import com.abo.artineer.dao.INoticeDAO;
-import com.abo.artineer.service.NoticeService;
 import com.abo.artineer.controller.ProjectController;
+import com.abo.artineer.controller.ReferenceController;
+import com.abo.artineer.dao.IMemberDAO;
+import com.abo.artineer.dao.INoticeDAO;
 import com.abo.artineer.dao.IProjectDAO;
+import com.abo.artineer.dao.IReferenceDAO;
+import com.abo.artineer.service.NoticeService;
 
 @SpringBootApplication
 
@@ -29,6 +30,9 @@ import com.abo.artineer.dao.IProjectDAO;
 @MapperScan(basePackageClasses = IProjectDAO.class)
 @ComponentScan(basePackageClasses = MailService.class)
 @MapperScan(basePackageClasses = IMailDAO.class)
+@ComponentScan(basePackageClasses = ReferenceController.class)
+@MapperScan(basePackageClasses = IReferenceDAO.class)
+
 
 public class ArtineerApplication {
 

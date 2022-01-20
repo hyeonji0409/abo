@@ -3,7 +3,8 @@ package com.abo.artineer.controller;
 import com.abo.artineer.model.MemberVO;
 import com.abo.artineer.service.MailService;
 import com.abo.artineer.service.MemberService;
-import lombok.Setter;
+import java.util.HashMap;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -11,10 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import java.util.HashMap;
+
+
 
 import static java.lang.System.out;
 
@@ -24,7 +24,7 @@ public class MemberController {
     MemberService service;
     @Autowired
     MailService ms;
-    @Setter(onMethod_ = {@Autowired})
+    @Autowired
     private PasswordEncoder passwordEncoder;
     
     // 회원가입 폼 이동

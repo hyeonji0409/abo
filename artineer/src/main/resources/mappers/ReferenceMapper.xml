@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.abo.artineer.dao.IReferenceDAO">
+  		<resultMap  id="refResult" type="com.abo.artineer.model.ReferenceVO">
+  			<result property="refNo" column="refNo" />
+  			<result property="memName" column="memName" />
+  			<result property="memYear" column="memYear" />
+  			<result property="refTitle" column="refTitle" />
+  			<result property="refContent" column="refContent" />	
+  			<result property="refHit" column="refHit" />
+  			<result property="file" column="file" />
+  			<result property="createDate" column="createDate" />
+  			<result property="comment" column="comment" />
+  		</resultMap> 
+  
+  
+		<!-- 공지사항 조회 -->
+		<select id = "listReference" resultMap="refResult">
+	  			SELECT * FROM reference ORDER BY refNo 
+	  	</select>
+	  	
+	  <!-- 페이징 -->
+	  
+	<!-- 총 게시글 갯수 출력 -->
+		<select id="countBoard" resultType="int">
+			SELECT COUNT(*) FROM reference
+		</select>
+		
+		<!-- 페이징 처리 후 게시글 조회@ROWNUM:=@ROWNUM +1 AS RN -->
+		<select id="selectBoard" resultType="com.abo.artineer.model.ReferenceVO">
+		SELECT * 
+		FROM (
+			SELECT @ROWNUM:=@ROWNUM +1 AS RN, R.* 
+				FROM (
+						SELECT * FROM reference R
+						ORDER BY refNo DESC 
+						)R, (SELECT @ROWNUM:=0)A
+						)B
+			WHERE RN BETWEEN #{start} AND #{end}
+			</select>
+			
+	  
+	  <!--  -->
+	  	
+  	
+	   	<!-- 글 상세조회 -->
+		 <select id="detailReference" parameterType="int"  resultType="com.abo.artineer.model.ReferenceVO">
+	  			SELECT * FROM reference WHERE refNo=#{refNo}  		
+	  	 </select>
+	  		
+
+		 <!-- 글쓰기 -->
+		 <insert id="insertReference" parameterType="com.abo.artineer.model.ReferenceVO">
+	  			INSERT INTO reference (refNo,refTitle,refContent)
+	  			VALUES (#{refNo},#{refTitle}, #{refContent})
+	  	 </insert>
+  		
+  		<!-- 삭제  -->
+  		<delete id="deleteReference"  parameterType="int">
+  			DELETE FROM reference WHERE refNo=#{refNo}
+  		</delete>
+  		
+  		<!-- 수정 -->
+  		<update id="updateReference" parameterType="com.abo.artineer.model.ReferenceVO">
+  			UPDATE reference 
+  			SET refTitle=#{refTitle},
+  				refContent=#{refContent}
+  			WHERE refNo=#{refNo}
+  		</update>
+  		
+  		<!-- 조회수 올리기 -->
+		<update id="hitUp" parameterType="int">
+			update reference set refHit = refHit + 1 where refNo = #{refNo}
+		</update>
+</mapper>

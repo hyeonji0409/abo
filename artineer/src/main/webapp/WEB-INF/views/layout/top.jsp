@@ -1,7 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,14 +27,14 @@
 					<li><a href="about.html">About</a></li>
 					<li class="menu1"><a href="#">Notice</a>
 						<ul class="sub">
-							<li><a href="notice/listNotice">공지사항</a></li>
+							<li><a href="/notiList">공지사항</a></li>
 							<li><a href="meeting_note.html">회의록</a></li>
 						</ul></li>
 					<li class="menu1"><a href="#">Activity</a>
 						<ul class="sub">
 							<li><a href="<c:url value='/mento'/>">멘토링</a></li>
 							<li><a href="<c:url value='/listAllProject' />">프로젝트</a></li>
-							<li><a href="reference.html">자료실</a></li>
+							<li><a href="/refList">자료실</a></li>
 						</ul></li>
 					<li><a href="gallery.html">Gallery</a></li>
 				</ul>

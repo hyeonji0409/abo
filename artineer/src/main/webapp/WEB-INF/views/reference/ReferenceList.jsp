@@ -4,10 +4,11 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/reference.css">
-    <title>공지사항</title>
+     <link rel="stylesheet" href="/css/reference.css">
+    <title>자료실</title>
 </head>
 <style>
 
@@ -29,7 +30,7 @@
 <script>
 	function selChange() {
 		var sel = document.getElementById('cntPerPage').value;
-		location.href="notiList?nowPage=${paging.nowPage}&cntPerPage="+sel;
+		location.href="refList?nowPage=${paging.nowPage}&cntPerPage="+sel;
 	}
 </script>
 
@@ -46,8 +47,8 @@
                     <center>
                        <div class="table_title">
 
-                           <h1 style="color:rgba(51,51,51);">공지사항</h1>
-                           <h3 style="color:rgba(51,51,51);">Notice</h3>
+                           <h1 style="color:rgba(51,51,51);">자료실</h1>
+                           <h3 style="color:rgba(51,51,51);">REFERENCE</h3>
 
                        </div>
 
@@ -60,7 +61,7 @@
                            
                            
                            <!-- 글쓰기 버튼 -->
-                           <button id="write_btn"> <a href ="<c:url value='/notice/write'/>">새 글</a></button>
+                           <button id="write_btn"> <a href ="<c:url value='/reference/write'/>">새 글</a></button>
 
                        </div>
 
@@ -89,17 +90,17 @@
                            </caption>
                            <tbody class="sub_news" border="1" cellspacing="0">
 
-						<c:forEach items="${notiList }" var="noti">
+						<c:forEach items="${refList }" var="ref">
                             <tr>
-                                <td>${noti.noticeNo }</td>
+                                <td>${ref.refNo }</td>
                                 <td class="title">
-                                    <a href="<c:url value='/notice/detailNotice/${noti.noticeNo}'/>">${noti.noticeTitle }
-                                        <font color="black">(${noti.comment })</font>
+                                    <a href="<c:url value='/reference/detailReference/${ref.refNo}'/>">${ref.refTitle }
+                                        <font color="black">(${ref.comment })</font>
                                     </a>
                                 </td>
-                                <td class="name">${noti.memName }</td>
-                                <td class="date"><fmt:formatDate value="${noti.createDate}" pattern="yyyy.MM.dd"/></td>
-                                <td class="hit">${noti.noticeHit }</td>
+                                <td class="name">${ref.memName }</td>
+                                <td class="date"><fmt:formatDate value="${ref.createDate}" pattern="yyyy.MM.dd"/></td>
+                                <td class="hit">${ref.refHit }</td>
                                 </tr>
                          </c:forEach>
                                
@@ -124,7 +125,7 @@
 						<!-- 페이지 넘기기 -->		
 		      			<div class="pagelist">
 					<c:if test="${paging.startPage != 1 }">
-						<a href="<c:url value='/notiList?nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}'/>">◀</a>
+						<a href="<c:url value='/refList?nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}'/>">◀</a>
 					</c:if>
 					<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
 						<c:choose>
@@ -132,12 +133,12 @@
 								<b>${p }</b>
 							</c:when>
 							<c:when test="${p != paging.nowPage }">
-								<a href="<c:url value='/notiList?nowPage=${p }&cntPerPage=${paging.cntPerPage}'/>">${p }</a>
+								<a href="<c:url value='/refList?nowPage=${p }&cntPerPage=${paging.cntPerPage}'/>">${p }</a>
 							</c:when>
 						</c:choose>
 					</c:forEach>
 					<c:if test="${paging.endPage != paging.lastPage}">
-						<a href="<c:url value='/notiList?nowPage=${paging.endPage + 1 }&cntPerPage=${paging.cntPerPage}'/>">▶</a>
+						<a href="<c:url value='/refList?nowPage=${paging.endPage + 1 }&cntPerPage=${paging.cntPerPage}'/>">▶</a>
 					</c:if>
 					</div>
 				
