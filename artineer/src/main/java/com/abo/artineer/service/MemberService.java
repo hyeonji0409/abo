@@ -12,11 +12,11 @@ import java.util.HashMap;
 
 @Service
 public class MemberService implements IMemberService {
-    @Setter(onMethod_ = {@Autowired})
+    @Autowired
     @Qualifier("IMemberDAO")
     IMemberDAO dao;
 
-    @Setter(onMethod_ = {@Autowired})
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Override

@@ -9,19 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/js/jquery-3.6.0.min.js"></script>
-    <script src="/js/login.js"></script>
     <script src="/js/dropdown.js"></script>
-    <script src="/js/slideShow.js"></script>
-    <script src="/js/gallery.js"></script>
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/menu.css">
-    <link rel="stylesheet" href="/css/slideShow.css">
-    <link rel="stylesheet" href="/css/reference.css">
-    <link rel="stylesheet" href="/css/gallery.css">
-    <link rel="stylesheet" href="/css/detailNotice.css">
     <title>Artineer</title>
-
 </head>
 <body>
 	<header id="headerBox">
@@ -36,14 +28,14 @@
 					<li><a href="about.html">About</a></li>
 					<li class="menu1"><a href="#">Notice</a>
 						<ul class="sub">
-							<li><a href="notice/listNotice">공지사항</a></li>
+							<li><a href="/notiList">공지사항</a></li>
 							<li><a href="meeting_note.html">회의록</a></li>
 						</ul></li>
 					<li class="menu1"><a href="#">Activity</a>
 						<ul class="sub">
 							<li><a href="mento.html">멘토링</a></li>
 							<li><a href="<c:url value='/listAllProject' />">프로젝트</a></li>
-							<li><a href="reference.html">자료실</a></li>
+							<li><a href="/refList">자료실</a></li>
 						</ul></li>
 					<li><a href="gallery.html">Gallery</a></li>
 				</ul>

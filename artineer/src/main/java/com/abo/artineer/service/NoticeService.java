@@ -1,6 +1,8 @@
 package com.abo.artineer.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -8,19 +10,23 @@ import org.springframework.stereotype.Service;
 
 import com.abo.artineer.dao.INoticeDAO;
 import com.abo.artineer.model.NoticeVO;
+import com.abo.artineer.model.PagingVO;
 
 @Service
+
 public class NoticeService implements INoticeService {
 	
 	@Autowired
 	@Qualifier("INoticeDAO")
 	INoticeDAO dao;
+	
 
-	@Override
-	public ArrayList<NoticeVO> listNotice() {
-		return dao.listNotice();
-	}
-
+	
+	//@Override
+	//public ArrayList<NoticeVO> listNotice() {
+	//	return dao.listNotice();
+	//}
+	
 	@Override
 	public void insertNotice(NoticeVO notiVo) {
 		dao.insertNotice(notiVo);
@@ -44,5 +50,27 @@ public class NoticeService implements INoticeService {
 		// TODO Auto-generated method stub
 		return dao.detailNotice(noticeNo);
 	}
+	//검색
+	@Override
+	public ArrayList<NoticeVO> noticeSearch(HashMap<String, Object> map) {
+		return dao.noticeSearch(map);
+	}
+	
+	@Override
+	public int countBoard() {
+		return dao.countBoard();
+	}
+
+	@Override
+	public List<NoticeVO> selectBoard(PagingVO vo) {
+		return dao.selectBoard(vo);
+	}
+	
+	@Override
+	public int hitUp(int noticeNo) throws Exception {
+		return dao.hitUp(noticeNo);
+	}
+	
+
 
 }
