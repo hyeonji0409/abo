@@ -10,5 +10,6 @@ public interface IMemberService {
     String requestPw(String memId); // 패스워드 조회
     String findId(String memEmail, String memName); // 아이디 찾기
     String findPw(String memId, String memName, String memEmail); // 비밀번호 찾기
+    String findEmail(String memId, String memName, String memEmail); // 이메일 가져오기
     void updatePw(MemberVO memberVO); // 비밀번호 변경
 }

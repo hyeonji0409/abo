@@ -33,7 +33,7 @@
             VALUES (#{memId}, #{memPw}, #{memName}, CONCAT(#{memHP},'-',#{memHP2},'-',#{memHP3}), #{memZipcode}, #{memAddress1}, #{memAddress2}, CONCAT(#{memEmail},'@',#{memEmail2}),
                     CONCAT(#{memBirth},'-',#{memBirthMonth},'-',#{memBirthDay}), #{memGender}, #{emailRcv}, #{memYear}, #{memLevel})
         </insert>
-<!--  암호화 비밀번호 조회  -->
+	<!--  암호화 비밀번호 조회  -->
     <select id="requestPw" parameterType="string" resultType="string">
         SELECT memPw FROM member WHERE memId=#{id_input}
     </select>
@@ -44,6 +44,10 @@
     <!--  비밀번호 변경 조건  -->
     <select id="findPw" resultType="string" parameterType="string">
         SELECT ifnull(memPw, 0) FROM member WHERE memEmail=#{memEmail} AND memName=#{memName} AND memId=#{memId}
+    </select>
+    <!--  비밀번호 변경 조건  -->
+    <select id="findEmail" resultType="string" parameterType="string">
+        SELECT ifnull(memEmail, 0) FROM member WHERE memEmail=#{memEmail} AND memName=#{memName} AND memId=#{memId}
     </select>
     <!--  비밀번호 변경  -->
     <update id="updatePw"  parameterType="string">

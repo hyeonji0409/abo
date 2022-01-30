@@ -68,15 +68,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
-<<<<<<< HEAD
 <!--	메일 전송 위한 의존성 추가	-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
-=======
-		
->>>>>>> 28b879d95e188e61734d202f8134bd6c1d0231c3
+
 	</dependencies>
 
 	<build>

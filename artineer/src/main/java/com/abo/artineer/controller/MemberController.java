@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -82,6 +83,7 @@ public class MemberController {
         out.println("passwordEncoder.matches(memPw, EncodedPw)) : " + passwordEncoder.matches(memPw, EncodedPw));
         if(vo != null && passwordEncoder.matches(memPw, EncodedPw)) {
             session.setAttribute("sid", vo.getMemName());
+            session.setAttribute("memId", memId);
             result = "success";
         }
         return result;
@@ -113,10 +115,18 @@ public class MemberController {
     @RequestMapping("/findPwtask")
     public String findPwtask(@RequestParam("pw_id_input") String pw_id_input,
                              @RequestParam("pw_name_input") String pw_name_input,
-                             @RequestParam("pw_email_input") String pw_email_input) {
+                             @RequestParam("pw_email_input") String pw_email_input,
+                              HttpServletRequest req) {
         String PwCheck = service.findPw(pw_id_input, pw_name_input, pw_email_input);
-        out.println("PW : " + PwCheck);
-        return PwCheck;
+        if(PwCheck != null) {
+            String sendEmail = service.findEmail(pw_id_input, pw_name_input, pw_email_input);
+            ms.sendMail(sendEmail);
+            out.println("PW : " + PwCheck);
+            return "login/authChangePw";
+        }
+        else {
+            return "fail";
+        }
     }
 
 //    // 비밀번호 찾기 폼 이동
@@ -125,11 +135,12 @@ public class MemberController {
 //        return "/login/changePw";
 //    }
 
-    @RequestMapping("/login/authChangePw")
-    public ModelAndView mailAuth(HttpServletRequest req) {
-        System.out.println("mail_ok() 호출");
-        ms.sendMail(req.getParameter("pw_email_input"));
-        ModelAndView modelAndView = new ModelAndView( "login/authChangePw");
-        return modelAndView;
-    }
+//    @RequestMapping("/login/authChangePw")
+//    public ModelAndView mailAuth(HttpServletRequest req) {
+//        System.out.println("mail_ok() 호출");
+//        ms.sendMail(req.getParameter("pw_email_input"));
+//        ModelAndView modelAndView = new ModelAndView( "login/authChangePw");
+//        return modelAndView;
+//    }
+    
 }

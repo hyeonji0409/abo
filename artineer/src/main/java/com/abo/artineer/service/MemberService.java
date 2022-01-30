@@ -12,7 +12,7 @@ import java.util.HashMap;
 
 @Service
 public class MemberService implements IMemberService {
-    @Autowired
+    @Setter(onMethod_ = {@Autowired})
     @Qualifier("IMemberDAO")
     IMemberDAO dao;
 
@@ -46,11 +46,15 @@ public class MemberService implements IMemberService {
     public String findPw(String memId, String memName, String memEmail) {
         return dao.findPw(memId, memName, memEmail);
     }
-
     @Override
     public void updatePw(MemberVO memberVO) {
         String encodedPassword = passwordEncoder.encode(memberVO.getMemPw());
         memberVO.setMemPw(encodedPassword);
         dao.updatePw(memberVO);
+    }
+
+    @Override
+    public String findEmail(String memId, String memName, String memEmail) {
+        return dao.findEmail(memId, memName, memEmail);
     }
 }

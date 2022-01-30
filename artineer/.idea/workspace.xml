@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eab96ffc-06f2-42f6-95e8-37751577eca0" name="Changes" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/main/java/com/abo/artineer/controller/ReferenceController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/abo/artineer/dao/IReferenceDAO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/abo/artineer/model/PagingVO.java" afterDir="false" />
@@ -44,6 +45,9 @@
       <change beforePath="$PROJECT_DIR$/target/classes/mappers/NoticeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/NoticeMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/css/reference.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/reference.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/abo/artineer/ArtineerApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/abo/artineer/ArtineerApplicationTests.class" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/abo/artineer/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abo/artineer/controller/MemberController.java" afterDir="false" />
+>>>>>>> main
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,10 +57,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
+        <option value="Class" />
         <option value="JavaScript File" />
         <option value="Jsp File" />
-        <option value="Class" />
-        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -115,7 +119,9 @@
       <workItem from="1642406520727" duration="10087000" />
       <workItem from="1642468805469" duration="8585000" />
       <workItem from="1642481846462" duration="18533000" />
-      <workItem from="1642643371399" duration="1878000" />
+      <workItem from="1642661587869" duration="217000" />
+      <workItem from="1642940121783" duration="3000" />
+      <workItem from="1643529948426" duration="3896000" />
     </task>
     <servers />
   </component>

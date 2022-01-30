@@ -6,7 +6,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+  	<link rel="stylesheet" href="/css/reference.css">
+
     <link rel="stylesheet" href="/css/reference.css">
+
     <title>공지사항</title>
 </head>
 <style>

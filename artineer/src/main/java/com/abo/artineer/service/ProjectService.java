@@ -3,17 +3,20 @@ package com.abo.artineer.service;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.abo.artineer.dao.IProjectDAO;
+import com.abo.artineer.model.MemInfoVO;
+import com.abo.artineer.model.MemberVO;
 import com.abo.artineer.model.ProjectVO;
 
 @Service
 public class ProjectService implements IProejectService{
 
-	@Autowired
+	@Setter(onMethod_ = {@Autowired})
 	@Qualifier("IProjectDAO")
 	IProjectDAO dao;
 	
@@ -47,6 +50,25 @@ public class ProjectService implements IProejectService{
 	public ArrayList<ProjectVO> projectSearch(HashMap<String, Object> map) {
 		return dao.projectSearch(map);
 	}
+
+	@Override
+	public MemberVO getMemberInfo(String memId) {
+		return dao.getMemberInfo(memId);
+	}
+
+	@Override
+	public void updateHit(int projHit) {
+		dao.updateHit(projHit);
+		
+	}
+
+	@Override
+	public ArrayList<ProjectVO> listSearchroject(String ctgId) {
+		return dao.listSearchroject(ctgId);
+	}
+
+
+	
 
 
 }

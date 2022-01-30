@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>프로젝트 - ${proj.projTitle }</title>
+<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
 <link rel="stylesheet" href="/css/write.css">
 </head>
 <body>
@@ -18,13 +19,14 @@
 			<table class="roadContent" border="1">
 				<tr>
 					<td class="sub_title">글 번호</td>
+					<!-- 카테고리 이름으로 바꿀것 -->
 					<td>${proj.projNo }</td>
 					<td class="sub_title">조회수</td>
 					<td>${proj.projHit }</td>
 				</tr>
 				<tr>
 					<td class="sub_title">작성자</td>
-					<td>${proj.memName }</td>
+					<td>${proj.memId }</td>
 					<td class="sub_title">작성일</td>
 					<td>${proj.createDate }</td>
 				</tr>
@@ -33,7 +35,18 @@
 					<td colspan="3" class="title">${proj.projTitle }</td>
 				</tr>
 				<tr>
-					<td colspan="4" id="content"><textarea class="form-control" id="p_content" name="projContent">${proj.projContent }</textarea></td>
+					<td class="sub_title">파일</td>
+					<td colspan="3" class="title"><c:forEach items="${fileList }"
+							var="file">
+							<a href="<c:url value='/fileDownload/${file }' />">${file }
+								파일 다운로드</a>
+							<br>
+						</c:forEach></td>
+				</tr>
+				<tr>
+					<td colspan="4" id="content"><textarea class="form-control"
+							id="p_content" name="projContent" placeholder="내용을 입력하세요">${proj.projContent }</textarea>
+					</td>
 				</tr>
 				<%-- <tr>
 				<td colspan="2">
@@ -46,8 +59,8 @@
 
 		<div class="crud">
 			<a href="<c:url value='/updateProjectForm/${proj.projNo }' />">수정</a>
-			<a href="javascript:deleteCheck();">삭제</a> 
-			<a href="<c:url value='/listAllProject' />"><button>목록</button></a>
+			<a href="javascript:deleteCheck();">삭제</a> <a
+				href="<c:url value='/listAllProject' />"><button>목록</button></a>
 		</div>
 
 		<script type="text/javascript">
@@ -58,6 +71,13 @@
 					location.href = "/deleteProject/${proj.projNo}";
 				}
 			}
+
+			CKEDITOR.replace('projContent', {
+				height : 350
+			});
+
+			CKEDITOR.instances['p_content'].getData();
+			//document.getElementById('p_content').value = content;
 		</script>
 
 		<!-- bottom -->
