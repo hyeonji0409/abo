@@ -3,6 +3,7 @@ package com.abo.artineer.service;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,7 @@ import com.abo.artineer.model.ProjectVO;
 @Service
 public class ProjectService implements IProejectService{
 
-	@Autowired
+	@Setter(onMethod_ = {@Autowired})
 	@Qualifier("IProjectDAO")
 	IProjectDAO dao;
 	

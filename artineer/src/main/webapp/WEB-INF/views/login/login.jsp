@@ -17,7 +17,7 @@
     <!-- login container -->
     <div class="login_container">
         <div class="header__logo">
-            <a href="index.html" id="logo">
+            <a href="<c:url value='/' /> " id="logo">
                 <img src="image/logo.png">
             </a>
             <h1>ARTINEER</h1>

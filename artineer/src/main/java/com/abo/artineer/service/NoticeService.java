@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -15,18 +16,14 @@ import com.abo.artineer.model.PagingVO;
 @Service
 
 public class NoticeService implements INoticeService {
-	
-	@Autowired
+
+	@Setter(onMethod_ = {@Autowired})
 	@Qualifier("INoticeDAO")
 	INoticeDAO dao;
 	
 
 	
-	//@Override
-	//public ArrayList<NoticeVO> listNotice() {
-	//	return dao.listNotice();
-	//}
-	
+
 	@Override
 	public void insertNotice(NoticeVO notiVo) {
 		dao.insertNotice(notiVo);
@@ -70,7 +67,7 @@ public class NoticeService implements INoticeService {
 	public int hitUp(int noticeNo) throws Exception {
 		return dao.hitUp(noticeNo);
 	}
-	
+
 
 
 }

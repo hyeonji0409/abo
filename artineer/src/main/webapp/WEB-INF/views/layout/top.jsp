@@ -4,7 +4,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,23 +13,12 @@
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/menu.css">
     <title>Artineer</title>
-=======
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="/js/jquery-3.6.0.min.js"></script>
-	<script src="/js/dropdown.js"></script>
-	<link rel="stylesheet" href="/css/common.css">
-	<link rel="stylesheet" href="/css/index.css">
-	<link rel="stylesheet" href="/css/menu.css">
-	<title>Artineer</title>
->>>>>>> b2884e041830dfdc44e002cea9e0dd90eb6f21d4
 </head>
 <body>
 	<header id="headerBox">
 		<!-- header -->
 		<div id="logoBox">
-			<a href="index.html"><img src="/image/logo.png" id="logoImage"></a>
+			<a href="<c:url value='/'/> "><img src="/image/logo.png" id="logoImage"></a>
 
 		</div>
 		<div id="topMenuBox">

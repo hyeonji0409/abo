@@ -79,7 +79,7 @@ public class ProjectController {
 	@RequestMapping("/detailViewProject/{projNo}")
 	public String detailViewProject(@PathVariable String projNo, Model model, HttpServletRequest request) {
 		ProjectVO proj = service.detailViewProject(projNo);
-		service.updateHit(Integer.parseInt(request.getParameter("projHit")));
+//		service.updateHit(Integer.parseInt(request.getParameter("projHit")));
 		model.addAttribute("proj", proj);
 		return "project/projectDetailView";
 	}

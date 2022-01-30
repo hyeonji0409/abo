@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,7 @@ import com.abo.artineer.model.PagingVO;
 import com.abo.artineer.model.ReferenceVO;
 @Service
 public class ReferenceService implements IReferenceService {
-	@Autowired
+	@Setter(onMethod_ = {@Autowired})
 	@Qualifier("IReferenceDAO")
 	IReferenceDAO dao;
 
