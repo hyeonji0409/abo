@@ -115,14 +115,13 @@ public class MemberController {
     @RequestMapping("/findPwtask")
     public String findPwtask(@RequestParam("pw_id_input") String pw_id_input,
                              @RequestParam("pw_name_input") String pw_name_input,
-                             @RequestParam("pw_email_input") String pw_email_input,
-                              HttpServletRequest req) {
+                             @RequestParam("pw_email_input") String pw_email_input) {
         String PwCheck = service.findPw(pw_id_input, pw_name_input, pw_email_input);
         if(PwCheck != null) {
             String sendEmail = service.findEmail(pw_id_input, pw_name_input, pw_email_input);
             ms.sendMail(sendEmail);
             out.println("PW : " + PwCheck);
-            return "login/authChangePw";
+            return "/login/authChangePw";
         }
         else {
             return "fail";
@@ -135,12 +134,9 @@ public class MemberController {
 //        return "/login/changePw";
 //    }
 
-//    @RequestMapping("/login/authChangePw")
-//    public ModelAndView mailAuth(HttpServletRequest req) {
-//        System.out.println("mail_ok() 호출");
-//        ms.sendMail(req.getParameter("pw_email_input"));
-//        ModelAndView modelAndView = new ModelAndView( "login/authChangePw");
-//        return modelAndView;
-//    }
+    @RequestMapping("/login/authChangePw")
+    public String authChangePw() {
+        return "/login/authChangePw";
+    }
     
 }

@@ -5,49 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eab96ffc-06f2-42f6-95e8-37751577eca0" name="Changes" comment="">
-<<<<<<< HEAD
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/abo/artineer/controller/ReferenceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/abo/artineer/dao/IReferenceDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/abo/artineer/model/PagingVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/abo/artineer/model/ReferenceVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/abo/artineer/service/IReferenceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/abo/artineer/service/ReferenceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/ReferenceMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/reference/ReferenceList.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/reference/detailReference.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/reference/updateReferenceForm.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/reference/write.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/controller/ReferenceController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/dao/IReferenceDAO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/model/PagingVO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/model/ReferenceVO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/service/IReferenceService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/service/ReferenceService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mappers/ReferenceMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/abo/artineer/ArtineerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abo/artineer/ArtineerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/abo/artineer/dao/INoticeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abo/artineer/dao/INoticeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/abo/artineer/service/INoticeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abo/artineer/service/INoticeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/abo/artineer/service/NoticeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abo/artineer/service/NoticeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/NoticeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/NoticeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/reference.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/reference.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/notice/updateNoticeForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/notice/updateNoticeForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/notice/write.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/notice/write.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abo/artineer/ArtineerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/ArtineerApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abo/artineer/ServletInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/ServletInitializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abo/artineer/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abo/artineer/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/controller/MemberController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abo/artineer/dao/INoticeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/dao/INoticeDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abo/artineer/model/MemberVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/model/MemberVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abo/artineer/service/INoticeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/service/INoticeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abo/artineer/service/NoticeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/service/NoticeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/NoticeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/NoticeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/reference.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/reference.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/abo/artineer/ArtineerApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/abo/artineer/ArtineerApplicationTests.class" afterDir="false" />
-=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/abo/artineer/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/abo/artineer/controller/MemberController.java" afterDir="false" />
->>>>>>> main
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/findForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/findForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login/authChangePw.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login/authChangePw.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login/changePw.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login/changePw.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/abo/artineer/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/controller/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/abo/artineer/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/controller/MemberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/abo/artineer/service/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/service/MemberService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/abo/artineer/service/NoticeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/service/NoticeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/abo/artineer/service/ReferenceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abo/artineer/service/ReferenceService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

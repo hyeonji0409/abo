@@ -31,10 +31,11 @@ $(document).ready(function(){
                 "pw_email_input":$('#pw_email_input').val()},
             // dataType:'text',
             success:function(result){
-                if(result != 0){
-                    alert("입력하신 이메일로 인증번호가 전송됐습니다.");
-                }else{
+                if(result == "fail"){
                     alert("일치하는 정보가 없습니다. \n정보를 확인해 주세요.");
+                }else{
+                    alert("입력하신 이메일로 인증번호가 전송됐습니다.");
+                    location.href="/login/authChangePw";
                 }
             },
             error:function(data, textStatus){

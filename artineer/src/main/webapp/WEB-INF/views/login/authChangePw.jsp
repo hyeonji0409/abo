@@ -7,10 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artineer</title>
     <script src="js/jquery-3.6.0.min.js"></script>
-
-    <link rel="stylesheet" href="css/findForm.css">
+    <link rel="stylesheet" href="/css/findForm.css">
     <style>
-        #changePw{
+        #memberAuthCode{
             height: 30px;
             width: 300px;
             margin: 10px;
@@ -24,13 +23,13 @@
     <div class="login_container">
         <div class="header__logo">
             <a href="index.html" id="logo">
-                <img src="image/logo.png">
+                <img src="/image/logo.png">
             </a>
         </div>
         <form class="sign_in_container" id="sign_in_container">
             <div class="header__logo">
                 <a href="index.html" id="logo">
-                    <img src="image/logo.png">
+                    <img src="/image/logo.png">
                 </a>
                 <h1>인증번호 입력</h1>
             </div>

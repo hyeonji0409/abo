@@ -25,13 +25,13 @@
     <div class="login_container">
         <div class="header__logo">
             <a href="index.html" id="logo">
-                <img src="image/logo.png">
+                <img src="/image/logo.png">
             </a>
         </div>
         <form class="sign_in_container" id="sign_in_container">
             <div class="header__logo">
                 <a href="index.html" id="logo">
-                    <img src="image/logo.png">
+                    <img src="/image/logo.png">
                 </a>
                 <h1>비밀번호 변경</h1>
             </div>
